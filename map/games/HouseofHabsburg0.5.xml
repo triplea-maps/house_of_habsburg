@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-    <info name="House of Habsburg" version="0.5"/>
+    <info name="House of Habsburg" version="0.6"/>
     <loader javaClass="games.strategy.triplea.TripleA"/>
 	<diceSides value="6"/>
 
@@ -3249,6 +3249,8 @@
         <connection t1="Turkey 01" t2="Turkey 02"/>
         <connection t1="Turkey 01" t2="Turkey 03"/>
         <connection t1="Turkey 02" t2="Turkey 03"/>
+        <connection t1="Turkey 02" t2="Turkey 06"/>
+        <connection t1="Turkey 03" t2="Turkey 04"/>
         <connection t1="Turkey 04" t2="Turkey 05"/>
         <connection t1="Turkey 04" t2="Turkey 11"/>
         <connection t1="Turkey 04" t2="Turkey 18"/>
@@ -3480,21 +3482,18 @@
 
 <!--Unit List-->
     <unitList>
+        <unit name="Pikemen"/>
         <unit name="Cannon"/>
-        <unit name="Castle"/>
-        <unit name="City"/>
-        <unit name="Crossbow"/>
-        <unit name="Horsemen"/>
         <unit name="Knights"/>
         <unit name="Musketmen"/>
+
         <unit name="Navy"/>
-        <unit name="Pikemen"/>
+
+        <unit name="Castle"/>
+        <unit name="City"/>
         <unit name="Village"/>
 
         <unit name="RecruitPikemen"/>
-        <unit name="RecruitCrossbow"/>
-        <unit name="RecruitMusketmen"/>
-
     </unitList>
 
     <gamePlay>
@@ -3612,14 +3611,6 @@
             <cost resource="PUs" quantity="50" />
             <result resourceOrUnit="City" quantity="1"/>
         </productionRule>
-        <productionRule name="buyCrossbow">
-            <cost resource="PUs" quantity="12" />
-            <result resourceOrUnit="Crossbow" quantity="1"/>
-        </productionRule>
-        <productionRule name="buyHorsemen">
-            <cost resource="PUs" quantity="15" />
-            <result resourceOrUnit="Horsemen" quantity="1"/>
-        </productionRule>
         <productionRule name="buyKnights">
             <cost resource="PUs" quantity="18" />
             <result resourceOrUnit="Knights" quantity="1"/>
@@ -3638,31 +3629,20 @@
         </productionRule>
 
 
-        <productionRule name="buyRecruitCrossbow">
-            <cost resource="PUs" quantity="12" />
-            <result resourceOrUnit="RecruitCrossbow" quantity="1"/>
-        </productionRule>
         <productionRule name="buyRecruitPikemen">
             <cost resource="PUs" quantity="12" />
             <result resourceOrUnit="RecruitPikemen" quantity="1"/>
-        </productionRule>
-        <productionRule name="buyRecruitMusketmen">
-            <cost resource="PUs" quantity="15" />
-            <result resourceOrUnit="RecruitMusketmen" quantity="1"/>
         </productionRule>
 
         <!-- Production Frontiers -->
 
         <productionFrontier name="production_All">
             <frontierRules name="buyPikemen"/>
-            <frontierRules name="buyCrossbow"/>
+            <frontierRules name="buyRecruitPikemen"/>
             <frontierRules name="buyMusketmen"/>
             <frontierRules name="buyCannon"/>
-            <frontierRules name="buyHorsemen"/>
             <frontierRules name="buyKnights"/>
 
-            <frontierRules name="buyRecruitCrossbow"/>
-            <frontierRules name="buyRecruitPikemen"/>
 
             <frontierRules name="buyNavy"/>
             <frontierRules name="buyCastle"/>
@@ -3684,14 +3664,11 @@
 
     <attachmentList>
 	<!--Territory Attachments-->
-	<attachment name="territoryAttachment" attachTo="Sea Zone 111" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="10"/>
-	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sea Zone 147" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="10"/>
+		<option name="production" value="5"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sea Zone 152" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="10"/>
+		<option name="production" value="5"/>
 	</attachment>	
 
 	<attachment name="territoryAttachment" attachTo="Northern Isles" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
@@ -4044,7 +4021,7 @@
 		<option name="production" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Crete" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="2"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Crimea" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -4074,7 +4051,7 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Denmark 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 		<option name="capital" value="Denmark"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Denmark 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
@@ -4237,7 +4214,7 @@
 		<option name="production" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 15" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="5"/>
+		<option name="production" value="4"/>
 		<option name="capital" value="France"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 16" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
@@ -4338,7 +4315,8 @@
 		<option name="isImpassable" value="true"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 48" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="1"/>
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 49" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="0"/>
@@ -4558,7 +4536,7 @@
 		<option name="production" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="2"/>
@@ -4592,7 +4570,7 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 13" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="3"/>
+		<option name="production" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 14" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -4610,13 +4588,13 @@
 		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 19" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 20" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 21" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="2"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 22" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -4790,16 +4768,16 @@
 		<option name="production" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Netherlands 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Netherlands 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="0"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="0"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -4835,7 +4813,8 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 14" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="1"/>
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Poland 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -5019,7 +4998,7 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -5148,7 +5127,7 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 46" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 		<option name="capital" value="Russia"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 47" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
@@ -5377,7 +5356,7 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Spain 18" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="4"/>
+		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Spain 19" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -5554,7 +5533,7 @@
 		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Syria 06" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="1"/>
+		<option name="production" value="0"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Syria 07" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="0"/>
@@ -5578,10 +5557,10 @@
 		<option name="production" value="3"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Tunisia 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="0"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Tunisia 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="2"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Tunisia 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -5602,17 +5581,17 @@
 		<option name="production" value="0"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="2"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="2"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="5"/>
+		<option name="production" value="3"/>
 		<option name="capital" value="Ottoman_Empire"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="production" value="2"/>
+		<option name="production" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="production" value="1"/>
@@ -5915,26 +5894,17 @@
             <option name="defense" value="0"/>
             <option name="movement" value="0"/>
             <option name="isInfrastructure" value="true"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Castle"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="City" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="isFactory" value="true"/>
             <option name="movement" value="0"/>
         </attachment>
-        <attachment name="unitAttachment" attachTo="Crossbow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="1"/>
-            <option name="defense" value="2"/>
-            <option name="movement" value="1"/>
-            <option name="transportCost" value="2"/>
-        </attachment>
-        <attachment name="unitAttachment" attachTo="Horsemen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="2"/>
-            <option name="defense" value="1"/>
-            <option name="movement" value="2"/>
-            <option name="canBlitz" value="true"/>
-            <option name="transportCost" value="2"/>
-        </attachment>
         <attachment name="unitAttachment" attachTo="Knights" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="4"/>
+            <option name="attack" value="3"/>
             <option name="defense" value="3"/>
             <option name="movement" value="2"/>
             <option name="canBlitz" value="true"/>
@@ -5949,7 +5919,7 @@
         <attachment name="unitAttachment" attachTo="Navy" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="isSea" value="true"/>
             <option name="attack" value="3"/>
-            <option name="defense" value="4"/>
+            <option name="defense" value="3"/>
             <option name="movement" value="2"/>
             <option name="transportCapacity" value="2"/>
         </attachment>
@@ -5962,46 +5932,19 @@
         <attachment name="unitAttachment" attachTo="Village" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="0"/>
             <option name="defense" value="0"/>
-            <option name="movement" value="0"/>
+            <option name="movement" value="1"/>
             <option name="isInfrastructure" value="true"/>
         </attachment>
 
 
-        <attachment name="unitAttachment" attachTo="RecruitCrossbow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="0"/>
-            <option name="defense" value="0"/>
-            <option name="movement" value="0"/>
-
-	<option name="consumesUnits" value="1:Village"/>
-      <option name="createsUnitsList" value="1:Crossbow"/>
-
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="Recruit"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
-      <option name="maxConstructionsPerTypePerTerr" value="1"/>
-        </attachment>
-
-        <attachment name="unitAttachment" attachTo="RecruitMusketmen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="0"/>
-            <option name="defense" value="0"/>
-            <option name="movement" value="0"/>
-
-	<option name="consumesUnits" value="1:Village"/>
-      <option name="createsUnitsList" value="1:Musketmen"/>
-
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="Recruit"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
-      <option name="maxConstructionsPerTypePerTerr" value="1"/>
-        </attachment>
 
         <attachment name="unitAttachment" attachTo="RecruitPikemen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-            <option name="attack" value="0"/>
-            <option name="defense" value="0"/>
-            <option name="movement" value="0"/>
+            <option name="attack" value="2"/>
+            <option name="defense" value="2"/>
+            <option name="movement" value="1"/>
 
 	<option name="consumesUnits" value="1:Village"/>
-      <option name="createsUnitsList" value="1:Pikemen"/>
+	<option name="createsUnitsList" value="1:Pikemen"/>
 
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Recruit"/>
@@ -6010,8 +5953,9 @@
         </attachment>
 
 <!--Support Attachments-->
+
     <attachment name="supportAttachmentCastleRolls" attachTo="Castle" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="Cannon:Crossbow:Horsemen:Knights:Musketmen:Pikemen"/>
+      <option name="unitType" value="Cannon:Knights:Musketmen:Pikemen"/>
       <option name="faction" value="enemy"/>
       <option name="side" value="defence"/>
       <option name="dice" value="roll"/>
@@ -6021,29 +5965,38 @@
 	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
     </attachment>
 
-    <attachment name="supportAttachmentCastleDefense" attachTo="Castle" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="Crossbow"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="strength"/>
-      <option name="bonus" value="1"/>
-      <option name="number" value="5"/>
-      <option name="bonusType" value="Crenelations"/>
-	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-    </attachment>
-
-    <attachment name="supportAttachmentCrossbow" attachTo="Crossbow" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentPikemenAntiCavalry" attachTo="Knights" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Pikemen"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
+      <option name="faction" value="enemy"/>
+      <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
       <option name="bonus" value="1"/>
       <option name="number" value="1"/>
-      <option name="bonusType" value="Defensive Formation"/>
+      <option name="bonusType" value="AntiCavalry"/>
 	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-    </attachment>
+    </attachment> 
 
+    <attachment name="supportAttachmentMusketAttackSuppression" attachTo="Musketmen" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Pikemen"/>
+      <option name="faction" value="enemy"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="-1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Gunpowder"/>
+	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
+    </attachment> 
 
+    <attachment name="supportAttachmentMusketDefenseSuppression" attachTo="Musketmen" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Pikemen"/>
+      <option name="faction" value="enemy"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="-1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Gunpowder"/>
+	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
+    </attachment> 
 
 <!--Conditions and Triggers-->
 <!--Conditions-->
@@ -6051,84 +6004,59 @@
       <option name="rounds" value="1-+"/>
     </attachment>
 
-
-
 <!--Triggers-->
     <attachment name="triggerAttachmentFranceRemoveRecruits" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:FranceEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentHabsburg_MonarchyRemoveRecruits" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Habsburg_MonarchyEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentOttoman_EmpireRemoveRecruits" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Ottoman_EmpireEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentItalian_StatesRemoveRecruits" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Italian_StatesEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentRussiaRemoveRecruits" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:RussiaEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentPoland-LithuaniaRemoveRecruits" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Poland-LithuaniaEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentDenmarkRemoveRecruits" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:DenmarkEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
 
     <attachment name="triggerAttachmentSwedenRemoveRecruits" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:SwedenEndTurn"/>
-      <option name="removeUnits" value="all:RecruitCrossbow"/>
-      <option name="removeUnits" value="all:RecruitMusketmen"/>
       <option name="removeUnits" value="all:RecruitPikemen"/>
     </attachment>
-
-
-
-
-
-
 
     </attachmentList>
 
     <initialize>
 	<ownerInitialize>
-            <territoryOwner territory="Sea Zone 111" owner="Italian_States"/>
             <territoryOwner territory="Sea Zone 147" owner="Italian_States"/>
             <territoryOwner territory="Sea Zone 152" owner="Italian_States"/>
 
@@ -6143,8 +6071,6 @@
             <territoryOwner territory="Albania 01" owner="Ottoman_Empire"/>
             <territoryOwner territory="Albania 02" owner="Ottoman_Empire"/>
             <territoryOwner territory="Albania 03" owner="Ottoman_Empire"/>
-            <territoryOwner territory="Algeria 01" owner="Ottoman_Empire"/>
-            <territoryOwner territory="Algeria 02" owner="Ottoman_Empire"/>
             <territoryOwner territory="Algeria 03" owner="Ottoman_Empire"/>
             <territoryOwner territory="Algeria 05" owner="Ottoman_Empire"/>
             <territoryOwner territory="Algeria 10" owner="Ottoman_Empire"/>
@@ -6267,7 +6193,7 @@
             <territoryOwner territory="France 17" owner="France"/>
             <territoryOwner territory="France 18" owner="France"/>
             <territoryOwner territory="France 22" owner="Habsburg_Monarchy"/>
-            <territoryOwner territory="France 23" owner="France"/>
+            <territoryOwner territory="France 23" owner="Habsburg_Monarchy"/>
             <territoryOwner territory="France 24" owner="France"/>
             <territoryOwner territory="France 25" owner="France"/>
             <territoryOwner territory="France 26" owner="France"/>
@@ -6355,8 +6281,6 @@
             <territoryOwner territory="Libya 08" owner="Ottoman_Empire"/>
             <territoryOwner territory="Libya 09" owner="Ottoman_Empire"/>
             <territoryOwner territory="Libya 10" owner="Ottoman_Empire"/>
-            <territoryOwner territory="Libya 11" owner="Ottoman_Empire"/>
-            <territoryOwner territory="Libya 12" owner="Ottoman_Empire"/>
             <territoryOwner territory="Libya 13" owner="Ottoman_Empire"/>
             <territoryOwner territory="Libya 14" owner="Ottoman_Empire"/>
             <territoryOwner territory="Lithuania 01" owner="Poland-Lithuania"/>
@@ -6668,738 +6592,791 @@
             <unitPlacement unitType="Pikemen" territory="Gotland" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Saaremaa" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Musketmen" territory="Malta" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Musketmen" territory="Rhodes" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Musketmen" territory="Rhodes" quantity="2" owner="Italian_States"/>
             <unitPlacement unitType="Village" territory="Rhodes" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Castle" territory="Rhodes" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Musketmen" territory="Cyprus" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Village" territory="Cyprus" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 113" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 114" quantity="1" owner="France"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 126" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 135" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 152" quantity="4" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 163" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 190" quantity="5" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 152" quantity="2" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 159" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 182" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 186" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 190" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 191" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 26" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 27" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 34" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 36" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 37" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 52" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 36" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 39" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Navy" territory="Sea Zone 82" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="Albania 01" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Algeria 03" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Algeria 03" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Horsemen" territory="Algeria 04" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Algeria 06" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Algeria 12" quantity="1"/>
             <unitPlacement unitType="Village" territory="Algeria 13" quantity="2"/>
-            <unitPlacement unitType="Horsemen" territory="Algeria 13" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Algeria 13" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Austria 01" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Austria 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Austria 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Austria 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Horsemen" territory="Austria 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Austria 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Austria 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Horsemen" territory="Austria 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Cannon" territory="Austria 04" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Austria 04" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Austria 04" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Austria 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Austria 04" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Austria 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Austria 04" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Austria 04" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Austria 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Austria 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Austria 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Austria 06" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Austria 06" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Austria 06" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Austria 06" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Belgium 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Belgium 01" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Belgium 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Belgium 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Belgium 04" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Belgium 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Belgium 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Belgium 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Belgium 04" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Belgium 05" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Belgium 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Castle" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Belgium 05" quantity="5" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Belgium 06" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Belgium 06" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Belorussia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Belorussia 02" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Belorussia 03" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Belorussia 03" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Belorussia 09" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Knights" territory="Belorussia 09" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Castle" territory="Belorussia 09" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Horsemen" territory="Belorussia 09" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 03" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 09" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 09" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 10" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Belorussia 10" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Belorussia 14" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Cannon" territory="Belorussia 14" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Belorussia 14" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 11" quantity="5" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Castle" territory="Belorussia 11" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 11" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Knights" territory="Belorussia 11" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 13" quantity="4" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 13" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 15" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 16" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 16" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 17" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 17" quantity="3" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Musketmen" territory="Belorussia 17" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Belorussia 17" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Belorussia 17" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Belorussia 18" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 18" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 18" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Castle" territory="Belorussia 18" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Musketmen" territory="Belorussia 19" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Cannon" territory="Belorussia 18" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Musketmen" territory="Belorussia 18" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 19" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Belorussia 20" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Crossbow" territory="Belorussia 20" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 20" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Castle" territory="Belorussia 20" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 21" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Belorussia 21" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Belorussia 22" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Cannon" territory="Belorussia 22" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Belorussia 22" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Belorussia 22" quantity="4" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Castle" territory="Belorussia 22" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Knights" territory="Belorussia 22" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Belorussia 22" quantity="2" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 23" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Knights" territory="Bohemia 03" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Bohemia 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Bohemia 09" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Bohemia 09" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Bohemia 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Bohemia 07" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Bohemia 10" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Bohemia 10" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Bohemia 10" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Bosnia 01" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Bosnia 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Bosnia 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Bosnia 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Bosnia 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Bosnia 02" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Bosnia 01" quantity="3" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Bosnia 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Bosnia 03" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Bosnia 03" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Bosnia 02" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Bosnia 02" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Bosnia 03" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Bosnia 03" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Bosnia 04" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Bosnia 04" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Bulgaria 06" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Bulgaria 06" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Bulgaria 07" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Bulgaria 07" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Bulgaria 09" quantity="4" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Bulgaria 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Bulgaria 09" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Bulgaria 09" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Bulgaria 09" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Bulgaria 11" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Bulgaria 11" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Caucasus 01" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 02" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 03" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 04" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Bulgaria 09" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Bulgaria 12" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 01" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 04" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Caucasus 06" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Caucasus 06" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 07" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 08" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Caucasus 09" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 09" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 10" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 12" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 13" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 14" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Caucasus 15" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Caucasus 15" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Caucasus 16" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Caucasus 17" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Corsica" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 07" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 08" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 15" quantity="2"/>
+            <unitPlacement unitType="Knights" territory="Caucasus 15" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Caucasus 16" quantity="1"/>
             <unitPlacement unitType="Village" territory="Corsica" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Corsica" quantity="1"/>
             <unitPlacement unitType="Musketmen" territory="Crete" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Village" territory="Crete" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Croatia 01" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Croatia 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Croatia 02" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Crossbow" territory="Croatia 03" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Musketmen" territory="Croatia 06" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Croatia 06" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Croatia 03" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Village" territory="Croatia 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Croatia 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Croatia 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Croatia 06" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Croatia 06" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Croatia 07" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Croatia 07" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Croatia 07" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Musketmen" territory="Croatia 08" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Cannon" territory="Croatia 08" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Denmark 01" quantity="2" owner="Denmark"/>
-            <unitPlacement unitType="Knights" territory="Denmark 01" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Croatia 08" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Castle" territory="Denmark 01" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="City" territory="Denmark 01" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Denmark 01" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Cannon" territory="Denmark 01" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Denmark 03" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Denmark 03" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Denmark 04" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Denmark 04" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Pikemen" territory="Denmark 05" quantity="2" owner="Denmark"/>
-            <unitPlacement unitType="Cannon" territory="Denmark 05" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Castle" territory="Denmark 05" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Crossbow" territory="Denmark 06" quantity="3"/>
-            <unitPlacement unitType="Village" territory="Denmark 06" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Denmark 05" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Denmark 05" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Denmark 06" quantity="3"/>
+            <unitPlacement unitType="Pikemen" territory="Denmark 06" quantity="3"/>
             <unitPlacement unitType="Castle" territory="Denmark 06" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Egypt 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Egypt 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="City" territory="Egypt 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Egypt 10" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Egypt 07" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Egypt 07" quantity="5" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="England 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 02" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="England 03" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="England 04" quantity="1"/>
+            <unitPlacement unitType="Castle" territory="England 02" quantity="1"/>
+            <unitPlacement unitType="Village" territory="England 02" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="England 02" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="England 03" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="England 04" quantity="1"/>
             <unitPlacement unitType="Knights" territory="England 05" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 06" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 07" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="England 08" quantity="6"/>
+            <unitPlacement unitType="Village" territory="England 06" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="England 06" quantity="1"/>
+            <unitPlacement unitType="Cannon" territory="England 06" quantity="1"/>
+            <unitPlacement unitType="Village" territory="England 07" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="England 07" quantity="1"/>
             <unitPlacement unitType="City" territory="England 08" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 09" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 10" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="England 08" quantity="3"/>
+            <unitPlacement unitType="Castle" territory="England 08" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="England 08" quantity="3"/>
+            <unitPlacement unitType="Pikemen" territory="England 09" quantity="1"/>
             <unitPlacement unitType="Village" territory="England 10" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 11" quantity="1"/>
-            <unitPlacement unitType="Village" territory="England 11" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="England 12" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="England 10" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="England 11" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="England 12" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="England 12" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Estonia 03" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Estonia 04" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Finland 04" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Village" territory="Finland 04" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Village" territory="France 01" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 02" quantity="1" owner="France"/>
-            <unitPlacement unitType="Crossbow" territory="France 02" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="Finland 04" quantity="4" owner="Sweden"/>
             <unitPlacement unitType="City" territory="France 02" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 06" quantity="2" owner="France"/>
-            <unitPlacement unitType="Crossbow" territory="France 06" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 02" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 02" quantity="3" owner="France"/>
             <unitPlacement unitType="Castle" territory="France 06" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 07" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 08" quantity="1" owner="France"/>
-            <unitPlacement unitType="Crossbow" territory="France 08" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 06" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 08" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 08" quantity="3" owner="France"/>
             <unitPlacement unitType="Village" territory="France 08" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 09" quantity="1" owner="France"/>
-            <unitPlacement unitType="Knights" territory="France 13" quantity="2" owner="France"/>
-            <unitPlacement unitType="Castle" territory="France 13" quantity="1" owner="France"/>
-            <unitPlacement unitType="Horsemen" territory="France 13" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 14" quantity="1" owner="France"/>
-            <unitPlacement unitType="Knights" territory="France 15" quantity="4" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 11" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 13" quantity="1" owner="France"/>
             <unitPlacement unitType="City" territory="France 15" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 16" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 15" quantity="5" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 15" quantity="2" owner="France"/>
             <unitPlacement unitType="Cannon" territory="France 16" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 16" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 16" quantity="3" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 17" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 17" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 18" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 17" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 18" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 19" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="France 20" quantity="1"/>
-            <unitPlacement unitType="Village" territory="France 20" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="France 20" quantity="1"/>
+            <unitPlacement unitType="Village" territory="France 20" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="France 21" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="France 22" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="France 22" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="France 21" quantity="1"/>
             <unitPlacement unitType="Castle" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="France 23" quantity="2" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 23" quantity="2" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 23" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 22" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="France 22" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="France 23" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="France 23" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="France 24" quantity="1" owner="France"/>
-            <unitPlacement unitType="Knights" territory="France 28" quantity="2" owner="France"/>
-            <unitPlacement unitType="Castle" territory="France 28" quantity="1" owner="France"/>
-            <unitPlacement unitType="Horsemen" territory="France 28" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 29" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 29" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 29" quantity="1" owner="France"/>
-            <unitPlacement unitType="Musketmen" territory="France 30" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="France 30" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="France 30" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="France 31" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 32" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 35" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 31" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 33" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 33" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 33" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 33" quantity="2" owner="France"/>
             <unitPlacement unitType="Village" territory="France 35" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 36" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 36" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 37" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 38" quantity="1" owner="France"/>
-            <unitPlacement unitType="Crossbow" territory="France 38" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 38" quantity="2" owner="France"/>
-            <unitPlacement unitType="Castle" territory="France 38" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 40" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 42" quantity="1" owner="France"/>
-            <unitPlacement unitType="Crossbow" territory="France 42" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 38" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 40" quantity="2" owner="France"/>
             <unitPlacement unitType="City" territory="France 42" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 44" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 42" quantity="3" owner="France"/>
+            <unitPlacement unitType="Cannon" territory="France 42" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 44" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 45" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 46" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 01" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 02" quantity="2"/>
-            <unitPlacement unitType="Village" territory="Germany 02" quantity="3"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 03" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 03" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 04" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 01" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="Germany 01" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 02" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="Germany 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 03" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 04" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 04" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 05" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Germany 05" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 06" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 06" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 06" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 08" quantity="1"/>
             <unitPlacement unitType="Village" territory="Germany 08" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 09" quantity="3"/>
-            <unitPlacement unitType="Knights" territory="Germany 09" quantity="3"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 08" quantity="1"/>
             <unitPlacement unitType="City" territory="Germany 09" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 10" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 11" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 11" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 12" quantity="1"/>
-            <unitPlacement unitType="Knights" territory="Germany 13" quantity="2"/>
+            <unitPlacement unitType="Castle" territory="Germany 09" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="Germany 09" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 09" quantity="2"/>
+            <unitPlacement unitType="Village" territory="Germany 10" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 10" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Germany 10" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 11" quantity="3"/>
+            <unitPlacement unitType="Knights" territory="Germany 11" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 12" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 13" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 13" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Germany 14" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 14" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 15" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 15" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 15" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 16" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Germany 16" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 16" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 17" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 18" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Germany 18" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 18" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 19" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 19" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 20" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 21" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 22" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 22" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 23" quantity="1"/>
-            <unitPlacement unitType="Cannon" territory="Germany 23" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 22" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 23" quantity="3"/>
+            <unitPlacement unitType="Musketmen" territory="Germany 23" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 24" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 25" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 25" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="Germany 25" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 26" quantity="1"/>
             <unitPlacement unitType="Village" territory="Germany 26" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 27" quantity="1"/>
-            <unitPlacement unitType="Knights" territory="Germany 27" quantity="1"/>
+            <unitPlacement unitType="Cannon" territory="Germany 26" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 27" quantity="2"/>
+            <unitPlacement unitType="Village" territory="Germany 28" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 28" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 29" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 30" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 31" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 31" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 31" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 32" quantity="4"/>
+            <unitPlacement unitType="Village" territory="Germany 31" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 31" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 32" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Germany 32" quantity="1"/>
             <unitPlacement unitType="City" territory="Germany 32" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 33" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 33" quantity="2"/>
             <unitPlacement unitType="Castle" territory="Germany 33" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Germany 34" quantity="1"/>
             <unitPlacement unitType="Village" territory="Germany 34" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 35" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Germany 35" quantity="1"/>
-            <unitPlacement unitType="Knights" territory="Germany 35" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 34" quantity="1"/>
+            <unitPlacement unitType="Cannon" territory="Germany 34" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 35" quantity="3"/>
+            <unitPlacement unitType="Pikemen" territory="Germany 35" quantity="2"/>
+            <unitPlacement unitType="Knights" territory="Germany 36" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 36" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 36" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Germany 36" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Greece 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Greece 01" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Greece 03" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Greece 03" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Greece 03" quantity="3" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Castle" territory="Greece 03" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Greece 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Hungary 02" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Cannon" territory="Hungary 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Hungary 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Hungary 05" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Greece 03" quantity="5" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Greece 03" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Greece 03" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Hungary 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Hungary 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Hungary 04" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Hungary 05" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Hungary 06" quantity="4" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Hungary 06" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 05" quantity="3" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Hungary 06" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Musketmen" territory="Hungary 07" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Hungary 07" quantity="3" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Hungary 06" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 06" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 06" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Hungary 07" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Cannon" territory="Hungary 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Hungary 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Musketmen" territory="Hungary 08" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Hungary 08" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Cannon" territory="Hungary 08" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Hungary 08" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Hungary 09" quantity="3" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Hungary 09" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Hungary 09" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 07" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 07" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Hungary 08" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 08" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 08" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Hungary 09" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 09" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 09" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Hungary 10" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Hungary 10" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Hungary 10" quantity="3" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Hungary 10" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Hungary 11" quantity="3" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Hungary 11" quantity="3" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Hungary 12" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Hungary 12" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Hungary 12" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Ireland 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Ireland 01" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Ireland 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Ireland 02" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Ireland 03" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Ireland 04" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Ireland 05" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Ireland 05" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Ireland 05" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Ireland 06" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Israel 01" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Israel 01" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Israel 02" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Israel 03" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 11" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Hungary 12" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 12" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Ireland 01" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Ireland 01" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Ireland 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Ireland 03" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Ireland 04" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Ireland 05" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Ireland 05" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Ireland 06" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Israel 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Israel 03" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Israel 05" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Israel 05" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Italy 01" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Italy 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Italy 02" quantity="3" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Italy 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="City" territory="Italy 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 03" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Village" territory="Italy 03" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Musketmen" territory="Italy 06" quantity="4" owner="Italian_States"/>
-            <unitPlacement unitType="Cannon" territory="Italy 06" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Knights" territory="Italy 06" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 01" quantity="2"/>
+            <unitPlacement unitType="Musketmen" territory="Italy 01" quantity="2"/>
+            <unitPlacement unitType="Village" territory="Italy 01" quantity="5"/>
+            <unitPlacement unitType="Musketmen" territory="Italy 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Italy 02" quantity="5" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 02" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Italy 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Castle" territory="Italy 06" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="City" territory="Italy 06" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 07" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Village" territory="Italy 07" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 08" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Village" territory="Italy 08" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Musketmen" territory="Italy 06" quantity="3" owner="Italian_States"/>
+            <unitPlacement unitType="Cannon" territory="Italy 06" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Italy 09" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 10" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Village" territory="Italy 10" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 11" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Village" territory="Italy 11" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 11" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Italy 12" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 13" quantity="2"/>
-            <unitPlacement unitType="Crossbow" territory="Italy 13" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Italy 13" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Italy 12" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Italy 13" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 13" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 14" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Italy 14" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 15" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 16" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Italy 18" quantity="4"/>
-            <unitPlacement unitType="Castle" territory="Italy 18" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Italy 16" quantity="2"/>
+            <unitPlacement unitType="Village" territory="Italy 17" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Italy 18" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 19" quantity="4" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Italy 19" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Italy 18" quantity="5"/>
+            <unitPlacement unitType="Castle" territory="Italy 18" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 19" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Italy 19" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Italy 19" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Italy 21" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Italy 21" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Italy 22" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 24" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Italy 24" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 24" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Italy 26" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Italy Sicily 02" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Italy Sicily 02" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Latvia 02" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Latvia 02" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 26" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Italy Sicily 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Italy Sicily 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Castle" territory="Latvia 02" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Latvia 02" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Latvia 02" quantity="4" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Musketmen" territory="Latvia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Latvia 04" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Latvia 04" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Musketmen" territory="Latvia 04" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Latvia 06" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Latvia 06" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Libya 02" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Libya 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Libya 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Horsemen" territory="Libya 04" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Libya 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Libya 09" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Lithuania 04" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Macedonia 02" quantity="4" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Musketmen" territory="Macedonia 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Macedonia 02" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Macedonia 02" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Castle" territory="Macedonia 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Horsemen" territory="Moldova 01" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Macedonia 02" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Knights" territory="Macedonia 02" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Moldova 01" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Moldova 02" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Moldova 02" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Moldova 03" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Moldova 04" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Morocco 01" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Morocco 02" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Morocco 02" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Morocco 04" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Morocco 04" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Moldova 03" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Moldova 03" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Moldova 04" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Morocco 02" quantity="1"/>
             <unitPlacement unitType="Village" territory="Morocco 04" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Morocco 04" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Morocco 05" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Morocco 07" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Morocco 07" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Netherlands 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Netherlands 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Netherlands 03" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Netherlands 01" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Netherlands 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Castle" territory="Netherlands 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Netherlands 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Netherlands 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Netherlands 03" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Netherlands 04" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Norway 08" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Horsemen" territory="Norway 08" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Pikemen" territory="Norway 10" quantity="3" owner="Denmark"/>
+            <unitPlacement unitType="Musketmen" territory="Netherlands 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Castle" territory="Norway 10" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="City" territory="Norway 10" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Norway 10" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Cannon" territory="Norway 10" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Norway 13" quantity="2" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Norway 13" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Village" territory="Norway 13" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Knights" territory="Norway 13" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Poland 01" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Poland 01" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Poland 02" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Poland 02" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Poland 03" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Poland 06" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Poland 06" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Poland 07" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Poland 07" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Knights" territory="Poland 08" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Poland 07" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="City" territory="Poland 08" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Horsemen" territory="Poland 08" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Poland 09" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Knights" territory="Poland 08" quantity="3" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Poland 09" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Poland 10" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Poland 09" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Poland 10" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Poland 16" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Poland 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Poland 13" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Poland 16" quantity="3" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Knights" territory="Poland 16" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Poland 22" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Portugal 01" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Portugal 01" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Poland 23" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Poland 24" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Portugal 01" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Portugal 02" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Portugal 02" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Portugal 03" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Portugal 03" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Portugal 04" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Portugal 04" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Portugal 05" quantity="4"/>
             <unitPlacement unitType="City" territory="Portugal 05" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="Portugal 05" quantity="3"/>
+            <unitPlacement unitType="Castle" territory="Portugal 05" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Portugal 06" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Portugal 07" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Portugal 07" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Portugal 07" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Portugal 08" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Portugal 08" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Prussia 01" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Prussia 01" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Prussia 02" quantity="2" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Castle" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="City" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 01" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Romania 01" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Romania 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 02" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Romania 03" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 04" quantity="2"/>
             <unitPlacement unitType="Village" territory="Romania 04" quantity="2"/>
-            <unitPlacement unitType="Horsemen" territory="Romania 05" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 04" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Romania 04" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 05" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Romania 06" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Romania 07" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 08" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 09" quantity="2"/>
+            <unitPlacement unitType="Knights" territory="Romania 07" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 08" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Romania 08" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 09" quantity="4"/>
+            <unitPlacement unitType="Castle" territory="Romania 09" quantity="1"/>
             <unitPlacement unitType="Knights" territory="Romania 09" quantity="1"/>
             <unitPlacement unitType="City" territory="Romania 09" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 10" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="Romania 09" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 10" quantity="1"/>
             <unitPlacement unitType="Village" territory="Romania 10" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Romania 11" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Romania 14" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Romania 11" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 12" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Romania 13" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Romania 13" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 14" quantity="2"/>
+            <unitPlacement unitType="Village" territory="Romania 15" quantity="4"/>
             <unitPlacement unitType="Pikemen" territory="Romania 15" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Romania 15" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Romania 15" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Romania 16" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 17" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Castle" territory="Romania 17" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 17" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Romania 19" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 20" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 19" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Romania 21" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Romania 22" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Romania 22" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Russia 02" quantity="4" owner="Sweden"/>
+            <unitPlacement unitType="Cannon" territory="Romania 22" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 02" quantity="2" owner="Sweden"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 02" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Cannon" territory="Russia 02" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Castle" territory="Russia 02" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="City" territory="Russia 02" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Russia 03" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 09" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 09" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 09" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Village" territory="Russia 09" quantity="5" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 12" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 13" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 14" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 16" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 18" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 19" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 20" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Crossbow" territory="Russia 21" quantity="2" owner="Russia"/>
             <unitPlacement unitType="City" territory="Russia 21" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 21" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 21" quantity="3" owner="Russia"/>
+            <unitPlacement unitType="Cannon" territory="Russia 21" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Knights" territory="Russia 21" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 22" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 25" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Crossbow" territory="Russia 25" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 25" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 34" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Crossbow" territory="Russia 34" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Village" territory="Russia 24" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Knights" territory="Russia 24" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 24" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 34" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 35" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 36" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Crossbow" territory="Russia 36" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 37" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 36" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 36" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 37" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 38" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 37" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Cannon" territory="Russia 37" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 38" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 38" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 38" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 39" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 40" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Musketmen" territory="Russia 41" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 41" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Cannon" territory="Russia 41" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 41" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Village" territory="Russia 40" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Russia 41" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 41" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Knights" territory="Russia 41" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 42" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 43" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 43" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 44" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 43" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 44" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 45" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 44" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 45" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Knights" territory="Russia 46" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Castle" territory="Russia 46" quantity="1" owner="Russia"/>
             <unitPlacement unitType="City" territory="Russia 46" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 46" quantity="3" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 47" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 46" quantity="3" owner="Russia"/>
+            <unitPlacement unitType="Cannon" territory="Russia 46" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Knights" territory="Russia 46" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 47" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 49" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 52" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 52" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 53" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 52" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 53" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 54" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Cannon" territory="Russia 54" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Crossbow" territory="Russia 54" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Cannon" territory="Russia 53" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 53" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Village" territory="Russia 54" quantity="3" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 56" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 56" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 59" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Russia 61" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Knights" territory="Russia 61" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 61" quantity="2" owner="Russia"/>
-            <unitPlacement unitType="Musketmen" territory="Russia 62" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 54" quantity="3" owner="Russia"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 54" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Village" territory="Russia 56" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 56" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Village" territory="Russia 59" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 59" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 60" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 61" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 62" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 62" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 63" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Village" territory="Russia 63" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 63" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Knights" territory="Russia 63" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Castle" territory="Russia 63" quantity="1" owner="Russia"/>
             <unitPlacement unitType="Pikemen" territory="Russia 64" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Russia 64" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 65" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 66" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 67" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 68" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 69" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 70" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 71" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Russia 65" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 65" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 66" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Russia 66" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 67" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 71" quantity="1"/>
+            <unitPlacement unitType="Knights" territory="Russia 71" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Russia 72" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Russia 72" quantity="2"/>
-            <unitPlacement unitType="Horsemen" territory="Russia 73" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Russia 74" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 73" quantity="1"/>
             <unitPlacement unitType="Village" territory="Russia 74" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Sardinia 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Sardinia 01" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Russia 74" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Russia 74" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Sardinia 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Sardinia 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Scotland 01" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 01" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 02" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Scotland 03" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 03" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 04" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Scotland 04" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Scotland 05" quantity="3"/>
+            <unitPlacement unitType="Pikemen" territory="Scotland 05" quantity="4"/>
+            <unitPlacement unitType="Castle" territory="Scotland 05" quantity="1"/>
             <unitPlacement unitType="City" territory="Scotland 05" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Scotland 06" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 06" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Scotland 06" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Scotland 07" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 07" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 09" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Serbia 03" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Serbia 04" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Cannon" territory="Serbia 04" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Knights" territory="Serbia 04" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Serbia 01" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Serbia 01" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Serbia 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="City" territory="Serbia 04" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Serbia 06" quantity="3" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Castle" territory="Serbia 06" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Serbia 07" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Knights" territory="Serbia 07" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Sevastpol" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Serbia 04" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Serbia 04" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Serbia 04" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Knights" territory="Serbia 04" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Serbia 05" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Serbia 06" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Serbia 06" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Serbia 06" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Serbia 06" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Serbia 07" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Serbia 07" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Knights" territory="Serbia 07" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Sevastpol" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Crossbow" territory="Sicily 01" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Sevastpol" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Sicily 01" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Sicily 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Sicily 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Horsemen" territory="Sinai 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Sinai 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Slovakia 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Slovakia 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Slovakia 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Slovenia" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 03" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 03" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Spain 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Spain 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 06" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 07" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Spain 08" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 08" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Spain 08" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 08" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Spain 08" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 14" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 15" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 16" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 17" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Spain 18" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Spain 22" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 27" quantity="4" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 27" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 27" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 30" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 30" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Spain 30" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 33" quantity="4" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Crossbow" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 33" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 05" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Spain 37" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Spain 37" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Spain 37" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Sweden 05" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 06" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 06" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 07" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Knights" territory="Sweden 07" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Horsemen" territory="Sweden 07" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 09" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Cannon" territory="Sweden 09" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 08" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Castle" territory="Sweden 09" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="City" territory="Sweden 09" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 10" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 10" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 09" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Knights" territory="Sweden 09" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 10" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 11" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 12" quantity="2" owner="Denmark"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 12" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 13" quantity="2" owner="Denmark"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 13" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Village" territory="Sweden 13" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 14" quantity="3" owner="Sweden"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 15" quantity="3" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 10" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 11" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Cannon" territory="Sweden 11" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 11" quantity="2" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 12" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 12" quantity="3" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 13" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 13" quantity="3" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 14" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Musketmen" territory="Sweden 14" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 14" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Knights" territory="Sweden 14" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 15" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Castle" territory="Sweden 15" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 16" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 17" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 18" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Village" territory="Sweden 18" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Knights" territory="Sweden 18" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 19" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 16" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 17" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 17" quantity="2" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 18" quantity="3" owner="Sweden"/>
+            <unitPlacement unitType="Musketmen" territory="Sweden 18" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 18" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 19" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 19" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Cannon" territory="Sweden 19" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Musketmen" territory="Sweden 19" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 20" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 20" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 21" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Castle" territory="Sweden 21" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 21" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Crossbow" territory="Sweden 22" quantity="2" owner="Denmark"/>
-            <unitPlacement unitType="Castle" territory="Sweden 22" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Pikemen" territory="Switzerland 01" quantity="4"/>
+            <unitPlacement unitType="Knights" territory="Sweden 21" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 22" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 22" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Switzerland 01" quantity="3"/>
-            <unitPlacement unitType="Pikemen" territory="Switzerland 02" quantity="4"/>
+            <unitPlacement unitType="Pikemen" territory="Switzerland 01" quantity="3"/>
             <unitPlacement unitType="Village" territory="Switzerland 02" quantity="3"/>
-            <unitPlacement unitType="Horsemen" territory="Syria 03" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Switzerland 02" quantity="3"/>
+            <unitPlacement unitType="Pikemen" territory="Syria 03" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Syria 04" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Syria 05" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Syria 05" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Syria 06" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Syria 08" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Syria 08" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Syria 10" quantity="1"/>
-            <unitPlacement unitType="Village" territory="Syria 10" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Trieste" quantity="2" owner="Italian_States"/>
-            <unitPlacement unitType="Village" territory="Trieste" quantity="2" owner="Italian_States"/>
             <unitPlacement unitType="Castle" territory="Trieste" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Pikemen" territory="Tunisia 02" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Trieste" quantity="3" owner="Italian_States"/>
+            <unitPlacement unitType="Pikemen" territory="Trieste" quantity="2" owner="Italian_States"/>
+            <unitPlacement unitType="Musketmen" territory="Trieste" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Village" territory="Tunisia 02" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Tunisia 05" quantity="1"/>
-            <unitPlacement unitType="Horsemen" territory="Tunisia 06" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Turkey 01" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Tunisia 02" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Turkey 01" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Turkey 02" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Turkey 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Turkey 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Castle" territory="Turkey 02" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Musketmen" territory="Turkey 03" quantity="5" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Castle" territory="Turkey 03" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Turkey 02" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="City" territory="Turkey 03" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Turkey 08" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Turkey 03" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Knights" territory="Turkey 03" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Turkey 04" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Turkey 04" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Turkey 04" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Turkey 07" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Turkey 07" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Turkey 12" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Turkey 14" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Turkey 21" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Castle" territory="Turkey 21" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="City" territory="Turkey 21" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Horsemen" territory="Turkey 21" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Turkey 21" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Turkey 21" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Turkey 23" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Turkey 25" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Turkey 37" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Turkey 37" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Ukraine 02" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Ukraine 05" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 07" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Turkey 37" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Village" territory="Turkey 40" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 02" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 02" quantity="3" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 06" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Ukraine 07" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 09" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 09" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Musketmen" territory="Ukraine 09" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 10" quantity="4" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 10" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Musketmen" territory="Ukraine 10" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 11" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 12" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Ukraine 12" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 13" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Horsemen" territory="Ukraine 14" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 15" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 14" quantity="1"/>
             <unitPlacement unitType="Village" territory="Ukraine 15" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 16" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 15" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Ukraine 16" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 16" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 17" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Ukraine 18" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Castle" territory="Ukraine 18" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 18" quantity="2" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Ukraine 18" quantity="2" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Knights" territory="Ukraine 18" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Castle" territory="Ukraine 18" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Horsemen" territory="Ukraine 18" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 20" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Ukraine 20" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 20" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 22" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 22" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 23" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Ukraine 23" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 24" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Horsemen" territory="Ukraine 25" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 28" quantity="1"/>
+            <unitPlacement unitType="Castle" territory="Ukraine 23" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Cannon" territory="Ukraine 23" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 25" quantity="1"/>
             <unitPlacement unitType="Village" territory="Ukraine 28" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 28" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 29" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 30" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Village" territory="Ukraine 30" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Ukraine 30" quantity="1" owner="Russia"/>
-            <unitPlacement unitType="Horsemen" territory="Ukraine 31" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Ukraine 34" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Village" territory="Ukraine 34" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 29" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 30" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 30" quantity="2" owner="Russia"/>
+            <unitPlacement unitType="Musketmen" territory="Ukraine 30" quantity="1" owner="Russia"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 31" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Ukraine 33" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Castle" territory="Ukraine 33" quantity="1" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Knights" territory="Ukraine 33" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 35" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Ukraine 36" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Ukraine 37" quantity="2" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Castle" territory="Ukraine 37" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="Crossbow" territory="Wales 01" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Ukraine 37" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Village" territory="Ukraine 37" quantity="2" owner="Poland-Lithuania"/>
+            <unitPlacement unitType="Musketmen" territory="Ukraine 37" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Village" territory="Wales 01" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Wales 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Wales 01" quantity="1"/>
             <unitPlacement unitType="Village" territory="Wales 02" quantity="1"/>
-            <unitPlacement unitType="Crossbow" territory="Wales 03" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Wales 02" quantity="1"/>
             <unitPlacement unitType="Village" territory="Wales 03" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Wales 03" quantity="1"/>
+
         </unitInitialize>
 
         <resourceInitialize>
@@ -7465,17 +7442,9 @@ Anti-Habsburg- 		France, Ottoman Empire, Russia and Denmark
 	<td>2</td>
 	<td>1</td>
 	<td>12</td>
-	<td></td>
+	<td>+1 defense if the enemy has a knight (1:1)</td>
 	</tr>
 
-	<tr bgcolor="BDBDBD">
-	<td>Crossbow</td>
-	<td>1</td>
-	<td>2</td>
-	<td>1</td>
-	<td>12</td>
-	<td>Support a friendly pikemen +1 defense</td>
-	</tr>
 
 	<tr bgcolor="BDBDBD">
 	<td>Musketmen</td>
@@ -7483,7 +7452,7 @@ Anti-Habsburg- 		France, Ottoman Empire, Russia and Denmark
 	<td>3</td>
 	<td>1</td>
 	<td>15</td>
-	<td></td>
+	<td>One enemy pikemen or knight recieves -1 attack,-1 defense</td>
 	</tr>
 
 	<tr bgcolor="BDBDBD">
@@ -7496,17 +7465,8 @@ Anti-Habsburg- 		France, Ottoman Empire, Russia and Denmark
 	</tr>
 
 	<tr bgcolor="BDBDBD">
-	<td>Horsemen</td>
-	<td>2</td>
-	<td>1</td>
-	<td>2</td>
-	<td>15</td>
-	<td>2 movement. Can blitz</td>
-	</tr>
-
-	<tr bgcolor="BDBDBD">
 	<td>Knights</td>
-	<td>4</td>
+	<td>3</td>
 	<td>3</td>
 	<td>2</td>
 	<td>18</td>
@@ -7516,7 +7476,7 @@ Anti-Habsburg- 		France, Ottoman Empire, Russia and Denmark
 	<tr bgcolor="BDBDBD">
 	<td>Navy</td>
 	<td>3</td>
-	<td>4</td>
+	<td>3</td>
 	<td>2</td>
 	<td>20</td>
 	<td>Can transport 1 unit</td>
@@ -7536,7 +7496,7 @@ Anti-Habsburg- 		France, Ottoman Empire, Russia and Denmark
 	<td></td>
 	<td></td>
 	<td>30</td>
-	<td>Blocks 5 enemy dice rolls<br/>Gives up to 5 crossbows +1 defense</td>
+	<td>Blocks 5 enemy dice rolls</td>
 	</tr>
 
 	<tr bgcolor="BDBDBD">
@@ -7554,7 +7514,7 @@ Anti-Habsburg- 		France, Ottoman Empire, Russia and Denmark
 	<td></td>
 	<td></td>
 	<td></td>
-	<td>Allows you to place 1 crossbow or pikemen.<br/> Consumed on use, cannot be built</td>
+	<td>Allows you to place one pikemen.<br/> Consumed on use, cannot be built</td>
 	</tr>
 
 </table>
