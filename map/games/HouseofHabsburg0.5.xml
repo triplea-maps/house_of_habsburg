@@ -2670,6 +2670,7 @@
         <connection t1="Norway 08" t2="Norway 10"/>
         <connection t1="Norway 08" t2="Norway 11"/>
         <connection t1="Norway 09" t2="Norway 10"/>
+        <connection t1="Norway 09" t2="Sweden 05"/>
         <connection t1="Norway 09" t2="Sweden 12"/>
         <connection t1="Norway 10" t2="Norway 11"/>
         <connection t1="Norway 10" t2="Sweden 12"/>
@@ -2784,10 +2785,13 @@
         <connection t1="Romania 02" t2="Romania 09"/>
         <connection t1="Romania 02" t2="Romania 10"/>
         <connection t1="Romania 03" t2="Romania 04"/>
+        <connection t1="Romania 03" t2="Romania 08"/>
         <connection t1="Romania 03" t2="Romania 09"/>
         <connection t1="Romania 04" t2="Romania 05"/>
+        <connection t1="Romania 04" t2="Romania 07"/>
         <connection t1="Romania 05" t2="Romania 06"/>
         <connection t1="Romania 05" t2="Romania 07"/>
+        <connection t1="Romania 04" t2="Romania 08"/>
         <connection t1="Romania 05" t2="Ukraine 05"/>
         <connection t1="Romania 05" t2="Ukraine 06"/>
         <connection t1="Romania 06" t2="Romania 07"/>
@@ -2803,9 +2807,13 @@
         <connection t1="Romania 09" t2="Romania 14"/>
         <connection t1="Romania 09" t2="Romania 15"/>
         <connection t1="Romania 10" t2="Romania 11"/>
+        <connection t1="Romania 10" t2="Romania 12"/>
+        <connection t1="Romania 10" t2="Romania 14"/>
         <connection t1="Romania 11" t2="Romania 12"/>
+        <connection t1="Romania 11" t2="Romania 14"/>
         <connection t1="Romania 11" t2="Serbia 04"/>
         <connection t1="Romania 12" t2="Romania 13"/>
+        <connection t1="Romania 12" t2="Romania 14"/>
         <connection t1="Romania 12" t2="Romania 17"/>
         <connection t1="Romania 12" t2="Serbia 04"/>
         <connection t1="Romania 12" t2="Serbia 07"/>
