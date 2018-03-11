@@ -5956,7 +5956,7 @@
         <attachment name="unitAttachment" attachTo="Village" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="0"/>
             <option name="defense" value="0"/>
-            <option name="movement" value="1"/>
+            <option name="movement" value="0"/>
             <option name="isInfrastructure" value="true"/>
         </attachment>
 
@@ -6955,6 +6955,7 @@
             <unitPlacement unitType="Village" territory="Italy 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Cannon" territory="Italy 06" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Castle" territory="Italy 06" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="City" territory="Italy 06" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Musketmen" territory="Italy 06" quantity="3" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Italy 09" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 10" quantity="1" owner="Italian_States"/>
