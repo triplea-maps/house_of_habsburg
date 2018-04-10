@@ -968,6 +968,8 @@
         <territory name="Wales 03"/>
 
         <!-- Territory Connections -->
+        <connection t1="Sea Zone 103" t2="Sea Zone 97"/>
+
         <connection t1="Sea Zone 193" t2="Sea Zone 198"/>
         <connection t1="Sea Zone 193" t2="Sea Zone 197"/>
         <connection t1="Sea Zone 193" t2="Sea Zone 192"/>
@@ -983,6 +985,9 @@
         <connection t1="Sea Zone 199" t2="Crimea"/>
         <connection t1="Sea Zone 198" t2="Sea Zone 200"/>
 
+
+        <connection t1="Ukraine 33" t2="Ukraine 35"/>
+        <connection t1="Belorussia 21" t2="Ukraine 35"/>
 
         <connection t1="Greece 07" t2="Greece 09"/>
         <connection t1="Macedonia" t2="Greece 08"/>
@@ -2105,7 +2110,6 @@
         <connection t1="Bulgaria 05" t2="Bulgaria 06"/>
         <connection t1="Bulgaria 05" t2="Romania 01"/>
         <connection t1="Bulgaria 05" t2="Romania 02"/>
-        <connection t1="Bulgaria 05" t2="Turkey 01"/>
         <connection t1="Bulgaria 06" t2="Bulgaria 07"/>
         <connection t1="Bulgaria 06" t2="Bulgaria 08"/>
         <connection t1="Bulgaria 06" t2="Romania 02"/>
@@ -2120,7 +2124,6 @@
         <connection t1="Bulgaria 08" t2="Bulgaria 13"/>
         <connection t1="Bulgaria 09" t2="Bulgaria 10"/>
         <connection t1="Bulgaria 09" t2="Bulgaria 11"/>
-        <connection t1="Bulgaria 09" t2="Bulgaria 12"/>
         <connection t1="Bulgaria 09" t2="Bulgaria 13"/>
         <connection t1="Bulgaria 10" t2="Bulgaria 11"/>
         <connection t1="Bulgaria 10" t2="Greece 08"/>
@@ -2132,9 +2135,6 @@
         <connection t1="Bulgaria 12" t2="Romania 11"/>
         <connection t1="Bulgaria 12" t2="Serbia 03"/>
         <connection t1="Bulgaria 12" t2="Serbia 04"/>
-        <connection t1="Bulgaria 13" t2="Romania 11"/>
-        <connection t1="Bulgaria 13" t2="Serbia 03"/>
-        <connection t1="Bulgaria 13" t2="Serbia 04"/>
         <connection t1="Caucasus 01" t2="Caucasus 02"/>
         <connection t1="Caucasus 01" t2="Caucasus 03"/>
         <connection t1="Caucasus 02" t2="Caucasus 03"/>
@@ -3851,12 +3851,15 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Malta" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Rhodes" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Cyprus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 
 
@@ -3911,6 +3914,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Algeria 13" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Algeria 14" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -3938,9 +3942,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Austria 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Austria 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Austria 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -3953,24 +3959,30 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Austria 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Austria 06" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Austria 07" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belgium 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belgium 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belgium 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belgium 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belgium 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="5"/>
@@ -3978,6 +3990,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belgium 06" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Belorussia 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4063,12 +4076,14 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bohemia 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bohemia 06" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bohemia 07" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bohemia 08" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4084,9 +4099,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bosnia 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bosnia 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bosnia 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4114,6 +4131,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bulgaria 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Bulgaria 10" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4186,6 +4204,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Crete" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Crimea" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4201,9 +4220,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Croatia 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Croatia 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Croatia 06" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4221,9 +4242,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Denmark 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Denmark 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Denmark 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4268,9 +4291,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Egypt 10" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="England 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="England 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4299,6 +4324,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="England 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="England 10" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4306,9 +4332,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="England 11" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="England 12" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Estonia 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4346,6 +4374,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="6"/>
@@ -4353,6 +4382,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4360,6 +4390,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 06" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4367,6 +4398,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 07" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 08" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4378,15 +4410,19 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 10" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 11" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 12" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 13" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 14" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4403,27 +4439,35 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 17" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 18" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 19" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 20" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 21" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 22" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 23" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 23B" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 24" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4431,54 +4475,71 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 25" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 26" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 27" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 28" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 29" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 30" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 31" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 32" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 33" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 34" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 35" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 36" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 37" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 38" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 39" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 40" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 41" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 42" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="6"/>
@@ -4486,15 +4547,19 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 43" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 44" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 45" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 46" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="France 48" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="0"/>
@@ -4673,6 +4738,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Hungary 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Hungary 10" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="4"/>
@@ -4745,6 +4811,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 08" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4754,6 +4821,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 11" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy 12" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -4804,6 +4872,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Italy Sicily 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Kazakh 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4853,6 +4922,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Libya 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Libya 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4901,6 +4971,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Lithuania 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Lithuania 05" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4954,9 +5025,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Netherlands 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Netherlands 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Netherlands 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="6"/>
@@ -4964,6 +5037,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Netherlands 04" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -4998,6 +5072,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 11" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Norway 12" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -5218,6 +5293,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 10" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -5384,6 +5460,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 64" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Russia 65" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -5442,6 +5519,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Scotland 07" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Scotland 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -5470,6 +5548,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sevastpol" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sicily 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -5530,6 +5609,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Spain 08" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Spain 09" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -5672,30 +5752,39 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 14" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 15" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 16" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 17" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 18" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 19" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 20" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 21" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 22" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Sweden 23" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="0"/>
@@ -5707,9 +5796,11 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Switzerland 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Switzerland 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Switzerland 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="0"/>
@@ -5853,6 +5944,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 21" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Turkey 22" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -5964,6 +6056,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Ukraine 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Ukraine 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -6028,6 +6121,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Ukraine 23" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Ukraine 24" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="1"/>
@@ -6070,12 +6164,15 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Wales 01" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Wales 02" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Wales 03" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 
 
