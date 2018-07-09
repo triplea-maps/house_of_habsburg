@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-    <info name="House of Habsburg" version="0.6"/>
+    <info name="House of Habsburg 0.7" version="0.7"/>
     <loader javaClass="games.strategy.triplea.TripleA"/>
 	<diceSides value="12"/>
 
@@ -1092,7 +1092,6 @@
         <connection t1="France 23B" t2="France 32"/>
 
         <connection t1="France 15" t2="France 07"/>
-        <connection t1="France 15" t2="France 08"/>
         <connection t1="France 15" t2="France 16"/>
         <connection t1="France 15" t2="France 17"/>
         <connection t1="France 15" t2="France 18"/>
@@ -2308,8 +2307,6 @@
         <connection t1="France 07" t2="France 18"/>
         <connection t1="France 08" t2="France 09"/>
         <connection t1="France 08" t2="Paris"/>
-        <connection t1="France 08" t2="France 16"/>
-        <connection t1="France 08" t2="France 17"/>
         <connection t1="France 08" t2="France 18"/>
         <connection t1="France 09" t2="France 10"/>
         <connection t1="France 09" t2="France 14"/>
@@ -3569,10 +3566,10 @@
         <alliance player="Poland-Lithuania" alliance="Habsburg Alliance"/>
         <alliance player="Sweden" alliance="Habsburg Alliance"/>
 
-        <alliance player="Ottoman_Empire" alliance="Franco-Ottoman"/>
-        <alliance player="France" alliance="Franco-Ottoman"/>
-        <alliance player="Russia" alliance="Franco-Ottoman"/>
-        <alliance player="Denmark" alliance="Franco-Ottoman"/>
+        <alliance player="Ottoman_Empire" alliance="Anti-Habsburg"/>
+        <alliance player="France" alliance="Anti-Habsburg"/>
+        <alliance player="Russia" alliance="Anti-Habsburg"/>
+        <alliance player="Denmark" alliance="Anti-Habsburg"/>
     </playerList>
 
 <!--Unit List-->
@@ -3682,24 +3679,6 @@
             <step name="Ottoman_EmpireTechActivation" delegate="tech_activation" player="Ottoman_Empire"/>
             <step name="Ottoman_EmpireEndTurn" delegate="endTurn" player="Ottoman_Empire"/>
 
-            <!-- Russia Game Sequence-->
-            <step name="RussiaTech" delegate="tech" player="Russia"/>
-            <step name="RussiaCombatMove" delegate="move" player="Russia">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
-            <step name="RussiaBattle" delegate="battle" player="Russia"/>
-            <step name="RussiaNonCombatMove" delegate="move" player="Russia" display="Non Combat Move">
-	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
-            <step name="RussiaPurchase" delegate="purchase" player="Russia"/>
-            <step name="RussiaPlace" delegate="place" player="Russia"/>
-            <step name="RussiaTechActivation" delegate="tech_activation" player="Russia"/>
-            <step name="RussiaEndTurn" delegate="endTurn" player="Russia"/>
-
             <!-- Poland-Lithuania Game Sequence-->
             <step name="Poland-LithuaniaTech" delegate="tech" player="Poland-Lithuania"/>
             <step name="Poland-LithuaniaCombatMove" delegate="move" player="Poland-Lithuania">
@@ -3735,6 +3714,7 @@
             <step name="SwedenPlace" delegate="place" player="Sweden"/>
             <step name="SwedenTechActivation" delegate="tech_activation" player="Sweden"/>
             <step name="SwedenEndTurn" delegate="endTurn" player="Sweden"/>
+
 
             <!-- Denmark Game Sequence-->
             <step name="DenmarkTech" delegate="tech" player="Denmark"/>
@@ -5031,7 +5011,8 @@
 		<option name="productionOnly" value="2"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Germany 32" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
-		<option name="productionOnly" value="2"/>
+		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Germany 33" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -7012,7 +6993,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn03" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn03"/>
       <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7020,6 +7001,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn05" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn05"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7027,6 +7009,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn07" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn07"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7034,6 +7017,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn09" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn09"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7041,6 +7025,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn11" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn11"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7048,6 +7033,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn13" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn13"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7055,6 +7041,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn15" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn15"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7062,6 +7049,7 @@
     <attachment name="triggerAttachmentFranceTechTokenSupplyTurn17" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn17"/>
       <option name="when" value="before:FranceTech"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
@@ -7841,8 +7829,8 @@
             <territoryOwner territory="France 17" owner="France"/>
             <territoryOwner territory="France 18" owner="France"/>
             <territoryOwner territory="France 22" owner="Habsburg_Monarchy"/>
-            <territoryOwner territory="France 23" owner="Habsburg_Monarchy"/>
-            <territoryOwner territory="France 23B" owner="France"/>
+            <territoryOwner territory="France 23" owner="France"/>
+            <territoryOwner territory="France 23B" owner="Habsburg_Monarchy"/>
             <territoryOwner territory="France 24" owner="France"/>
             <territoryOwner territory="France 25" owner="France"/>
             <territoryOwner territory="France 26" owner="France"/>
@@ -8443,13 +8431,16 @@
             <unitPlacement unitType="City" territory="France 02" quantity="1" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 02" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 02" quantity="3" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 04" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 04" quantity="1" owner="France"/>
             <unitPlacement unitType="Castle" territory="France 06" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 06" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 06" quantity="1" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 08" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 08" quantity="3" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 08" quantity="2" owner="France"/>
             <unitPlacement unitType="Village" territory="France 08" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 09" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 15" quantity="2" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 15" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 15" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 15" quantity="1" owner="France"/>
@@ -8468,8 +8459,12 @@
             <unitPlacement unitType="Musketmen" territory="France 22" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="France 23" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="France 23" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="France 23" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 23" quantity="2" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 23B" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="France 23B" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="France 27" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 27" quantity="2" owner="France"/>
             <unitPlacement unitType="Village" territory="France 27" quantity="2" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 29" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 29" quantity="1" owner="France"/>
@@ -8546,11 +8541,12 @@
             <unitPlacement unitType="City" territory="Germany 32" quantity="1"/>
             <unitPlacement unitType="Knights" territory="Germany 32" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 32" quantity="1"/>
+            <unitPlacement unitType="Village" territory="Germany 33" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Cannon" territory="Germany 34" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 34" quantity="1"/>
             <unitPlacement unitType="Village" territory="Germany 34" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 35" quantity="2"/>
-            <unitPlacement unitType="Village" territory="Germany 35" quantity="3"/>
+            <unitPlacement unitType="Village" territory="Germany 35" quantity="1"/>
             <unitPlacement unitType="Knights" territory="Germany 36" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 36" quantity="1"/>
             <unitPlacement unitType="Village" territory="Germany 36" quantity="1"/>
@@ -8711,7 +8707,6 @@
             <unitPlacement unitType="Village" territory="Norway 13" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Musketmen" territory="Paris" quantity="3" owner="France"/>
             <unitPlacement unitType="Cannon" territory="Paris" quantity="1" owner="France"/>
-            <unitPlacement unitType="Knights" territory="Paris" quantity="2" owner="France"/>
             <unitPlacement unitType="Castle" territory="Paris" quantity="1" owner="France"/>
             <unitPlacement unitType="City" territory="Paris" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="Poland 01" quantity="1" owner="Poland-Lithuania"/>
@@ -9765,12 +9760,15 @@ Village clarifications <br/>
 You can only use one village in a territory per turn. Don't buy pikemen to place in villages. Buy recruits.(Be nice to another when editing this please)
 
 </table>
-
+<br/>
 <table border="1"bgcolor="ABABAB">
 	<tr>
 	<th style="font-size:120%;000000"bgcolor="CEF6F5"colspan="2">Technologies</th>
-	<tr bgcolor="ABABAB">
-	<th>Technology</th>
+	</tr>
+	<th bgcolor="ABABAB"colspan="2">You receive a technology for free on turns 1,3,4,7 etc. <br/>Technologies will activate the next turn</th>
+	<th></th>
+	</tr>
+	<th>Tech Name</th>
 	<th>Effect</th>
 	</tr>
 	<tr bgcolor="BDBDBD">
@@ -9786,36 +9784,20 @@ You can only use one village in a territory per turn. Don't buy pikemen to place
 	<td>HorsedrawnArtillery</td>
 	<td>Cannons gain 1 March.</td>
 	</tr>
-	<tr bgcolor="ABABAB">
-	<td></td>
-	<td></td>
-	</tr>
 
-	<tr bgcolor="BDBDBD">
+	<tr bgcolor="ABABAB">
 	<td>TercioFormation</td>
 	<td>Musketmen gain +1 defense</td>
-	</tr>
-	<tr bgcolor="ABABAB">
-	<td></td>
-	<td></td>
 	</tr>
 
 	<tr bgcolor="BDBDBD">
 	<td>HeavyCannons</td>
 	<td>Cannons roll 3 dice, but have -1 attack</td>
 	</tr>
-	<tr bgcolor="ABABAB">
-	<td></td>
-	<td></td>
-	</tr>
 
-	<tr bgcolor="BDBDBD">
+	<tr bgcolor="ABABAB">
 	<td>Hussars</td>
 	<td>Knights gain +1 attack</td>
-	</tr>
-	<tr bgcolor="ABABAB">
-	<td></td>
-	<td></td>
 	</tr>
 
 	<tr bgcolor="BDBDBD">
