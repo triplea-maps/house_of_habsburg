@@ -31,9 +31,6 @@
         <territory name="East Crimea"/>
         <territory name="Aland Islands"/>
 
-
-
-
         <territory name="Northern Isles"/>
         <territory name="Hebrides"/>
         <territory name="Gotland"/>
@@ -1413,6 +1410,7 @@
         <connection t1="Sea Zone 27" t2="Sea Zone 28"/>
         <connection t1="Sea Zone 27" t2="Sea Zone 29"/>
         <connection t1="Sea Zone 28" t2="Sea Zone 29"/>
+        <connection t1="Sea Zone 28" t2="Sea Zone 31"/>
         <connection t1="Sea Zone 29" t2="Sea Zone 30"/>
         <connection t1="Sea Zone 29" t2="Sea Zone 31"/>
         <connection t1="Sea Zone 30" t2="Sea Zone 31"/>
@@ -3609,16 +3607,10 @@
 
             <!-- France Game Sequence-->
             <step name="FranceTech" delegate="tech" player="France"/>
-            <step name="FranceCombatMove" delegate="move" player="France">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="FranceCombatMove" delegate="move" player="France"/>
             <step name="FranceBattle" delegate="battle" player="France"/>
             <step name="FranceNonCombatMove" delegate="move" player="France" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="FrancePurchase" delegate="purchase" player="France"/>
             <step name="FrancePlace" delegate="place" player="France"/>
@@ -3627,16 +3619,10 @@
 
             <!-- Habsburg_Monarchy Game Sequence-->
             <step name="Habsburg_MonarchyTech" delegate="tech" player="Habsburg_Monarchy"/>
-            <step name="Habsburg_MonarchyCombatMove" delegate="move" player="Habsburg_Monarchy">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="Habsburg_MonarchyCombatMove" delegate="move" player="Habsburg_Monarchy"/>
             <step name="Habsburg_MonarchyBattle" delegate="battle" player="Habsburg_Monarchy"/>
             <step name="Habsburg_MonarchyNonCombatMove" delegate="move" player="Habsburg_Monarchy" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="Habsburg_MonarchyPurchase" delegate="purchase" player="Habsburg_Monarchy"/>
             <step name="Habsburg_MonarchyPlace" delegate="place" player="Habsburg_Monarchy"/>
@@ -3645,16 +3631,10 @@
 
             <!-- Italian_States Game Sequence-->
             <step name="Italian_StatesTech" delegate="tech" player="Italian_States"/>
-            <step name="Italian_StatesCombatMove" delegate="move" player="Italian_States">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="Italian_StatesCombatMove" delegate="move" player="Italian_States"/>
             <step name="Italian_StatesBattle" delegate="battle" player="Italian_States"/>
             <step name="Italian_StatesNonCombatMove" delegate="move" player="Italian_States" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="Italian_StatesPurchase" delegate="purchase" player="Italian_States"/>
             <step name="Italian_StatesPlace" delegate="place" player="Italian_States"/>
@@ -3663,34 +3643,34 @@
 
             <!-- Ottoman_Empire Game Sequence-->
             <step name="Ottoman_EmpireTech" delegate="tech" player="Ottoman_Empire"/>
-            <step name="Ottoman_EmpireCombatMove" delegate="move" player="Ottoman_Empire">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="Ottoman_EmpireCombatMove" delegate="move" player="Ottoman_Empire"/>
             <step name="Ottoman_EmpireBattle" delegate="battle" player="Ottoman_Empire"/>
             <step name="Ottoman_EmpireNonCombatMove" delegate="move" player="Ottoman_Empire" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="Ottoman_EmpirePurchase" delegate="purchase" player="Ottoman_Empire"/>
             <step name="Ottoman_EmpirePlace" delegate="place" player="Ottoman_Empire"/>
             <step name="Ottoman_EmpireTechActivation" delegate="tech_activation" player="Ottoman_Empire"/>
             <step name="Ottoman_EmpireEndTurn" delegate="endTurn" player="Ottoman_Empire"/>
 
+            <!-- Russia Game Sequence-->
+            <step name="RussiaTech" delegate="tech" player="Russia"/>
+            <step name="RussiaCombatMove" delegate="move" player="Russia"/>
+            <step name="RussiaBattle" delegate="battle" player="Russia"/>
+            <step name="RussiaNonCombatMove" delegate="move" player="Russia" display="Non Combat Move">
+	        <stepProperty name="giveBonusMovement" value="true"/>
+		</step>
+            <step name="RussiaPurchase" delegate="purchase" player="Russia"/>
+            <step name="RussiaPlace" delegate="place" player="Russia"/>
+            <step name="RussiaTechActivation" delegate="tech_activation" player="Russia"/>
+            <step name="RussiaEndTurn" delegate="endTurn" player="Russia"/>
+
             <!-- Poland-Lithuania Game Sequence-->
             <step name="Poland-LithuaniaTech" delegate="tech" player="Poland-Lithuania"/>
-            <step name="Poland-LithuaniaCombatMove" delegate="move" player="Poland-Lithuania">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="Poland-LithuaniaCombatMove" delegate="move" player="Poland-Lithuania"/>
             <step name="Poland-LithuaniaBattle" delegate="battle" player="Poland-Lithuania"/>
             <step name="Poland-LithuaniaNonCombatMove" delegate="move" player="Poland-Lithuania" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="Poland-LithuaniaPurchase" delegate="purchase" player="Poland-Lithuania"/>
             <step name="Poland-LithuaniaPlace" delegate="place" player="Poland-Lithuania"/>
@@ -3699,16 +3679,10 @@
 
             <!-- Sweden Game Sequence-->
             <step name="SwedenTech" delegate="tech" player="Sweden"/>
-            <step name="SwedenCombatMove" delegate="move" player="Sweden">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="SwedenCombatMove" delegate="move" player="Sweden"/>
             <step name="SwedenBattle" delegate="battle" player="Sweden"/>
             <step name="SwedenNonCombatMove" delegate="move" player="Sweden" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="SwedenPurchase" delegate="purchase" player="Sweden"/>
             <step name="SwedenPlace" delegate="place" player="Sweden"/>
@@ -3718,23 +3692,17 @@
 
             <!-- Denmark Game Sequence-->
             <step name="DenmarkTech" delegate="tech" player="Denmark"/>
-            <step name="DenmarkCombatMove" delegate="move" player="Denmark">
-	        <stepProperty name="giveBonusMovement" value="false"/>
-	        <stepProperty name="resetUnitStateAtStart" value="true"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
-		</step>
+            <step name="DenmarkCombatMove" delegate="move" player="Denmark"/>
             <step name="DenmarkBattle" delegate="battle" player="Denmark"/>
             <step name="DenmarkNonCombatMove" delegate="move" player="Denmark" display="Non Combat Move">
 	        <stepProperty name="giveBonusMovement" value="true"/>
-	        <stepProperty name="resetUnitStateAtStart" value="false"/>
-	        <stepProperty name="resetUnitStateAtEnd" value="false"/>
 		</step>
             <step name="DenmarkPurchase" delegate="purchase" player="Denmark"/>
             <step name="DenmarkPlace" delegate="place" player="Denmark"/>
             <step name="DenmarkTechActivation" delegate="tech_activation" player="Denmark"/>
             <step name="DenmarkEndTurn" delegate="endTurn" player="Denmark"/>
-
             <step name="endRoundStep" delegate="endRound"/>
+
         </sequence>
     </gamePlay>
 
@@ -5605,6 +5573,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Romania 19" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Romania 20" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -6036,6 +6005,7 @@
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Spain 33" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="3"/>
+		<option name="unitProduction" value="1"/>
 	</attachment>	
 	<attachment name="territoryAttachment" attachTo="Spain 34" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">	
 		<option name="productionOnly" value="2"/>
@@ -6588,8 +6558,6 @@
             <option name="defense" value="6"/>
             <option name="movement" value="2"/>
             <option name="transportCapacity" value="2"/>
-
-            <option name="createsResourcesList" value="-1:PUs"/>
         </attachment>
         <attachment name="unitAttachment" attachTo="Pikemen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
             <option name="attack" value="4"/>
@@ -6701,41 +6669,18 @@
 
 
 <!--Conditions-->
-<!--Conditions for Turn Number-->
+<!--Conditions for Basic Game Features-->
     <attachment name="conditionAttachmentAlways" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="1-+"/>
     </attachment>
 
-    <attachment name="conditionAttachmentTurn03" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="3"/>
+    <attachment name="conditionAttachmentTechDevelopment" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Tech Development"/>
     </attachment>
 
-    <attachment name="conditionAttachmentTurn05" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="5"/>
-    </attachment>
-
-    <attachment name="conditionAttachmentTurn07" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="7"/>
-    </attachment>
-
-    <attachment name="conditionAttachmentTurn09" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="9"/>
-    </attachment>
-
-    <attachment name="conditionAttachmentTurn11" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="11"/>
-    </attachment>
-
-    <attachment name="conditionAttachmentTurn13" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="13"/>
-    </attachment>
-
-    <attachment name="conditionAttachmentTurn15" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="15"/>
-    </attachment>
-
-    <attachment name="conditionAttachmentTurn17" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="17"/>
+    <attachment name="conditionAttachmentGiveTechTokens" attachTo="France" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="conditions" value="conditionAttachmentTechDevelopment"/>
+	<option name="rounds" value="1:3:5:7:9:11:13:15:17"/>
     </attachment>
 
 <!--Tech Conditions-->
@@ -6990,69 +6935,14 @@
 
 <!--Triggers-->
 <!--Triggers: Tech Token Supply-->
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn03" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn03"/>
+    <attachment name="triggerAttachmentGiveTechTokens" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentGiveTechTokens"/>
       <option name="when" value="before:FranceTech"/>
       <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="resource" value="techTokens"/>
       <option name="resourceCount" value="12"/>
     </attachment>
 
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn05" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn05"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn07" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn07"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn09" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn09"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn11" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn11"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn13" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn13"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn15" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn15"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentFranceTechTokenSupplyTurn17" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn17"/>
-      <option name="when" value="before:FranceTech"/>
-      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
-      <option name="resource" value="techTokens"/>
-      <option name="resourceCount" value="12"/>
-    </attachment>
 
 <!--Triggers: Activate NonCombat Movement-->
 <!--Pikemen-->
@@ -7288,7 +7178,7 @@
       <option name="conditions" value="conditionAttachmentFranceDiscoveredSailing"/>
       <option name="when" value="after:FranceBattle"/>
       <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="1:Navy"/>
+      <option name="unitProperty" value="movement" count="3"/>
     </attachment>
 
     <attachment name="triggerAttachmentHabsburg_MonarchyActivateNavyMoveBonus" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -7342,339 +7232,36 @@
 
 <!--Triggers: Deactivate NonCombat Movement-->
 
-<!--Pikemen-->
-    <attachment name="triggerAttachmentFranceDeactivatePikemenMoveBonus" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentFranceDiscoveredMarch"/>
-      <option name="when" value="after:FranceBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
+<attachment name="triggerAttachmentDeactivateMoveBonus" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAlways"/>
+	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Poland-Lithuania:Russia:Denmark:Sweden"/>
+      <option name="unitType" value="Pikemen:Musketmen:Cannon:Knights:Navy"/>
+      <option name="unitProperty" value="givesMovement" count="-reset-"/>
+<!--      <option name="when" value="before:FranceCombatMove"/>-->
+      <option name="when" value="before:Habsburg_MonarchyCombatMove"/>
+      <option name="when" value="before:Ottoman_EmpireCombatMove"/>
+      <option name="when" value="before:Italian_StatesCombatMove"/>
+      <option name="when" value="before:Poland-LithuaniaCombatMove"/>
+      <option name="when" value="before:RussiaCombatMove"/>
+      <option name="when" value="before:DenmarkCombatMove"/>
+      <option name="when" value="before:SwedenCombatMove"/>
     </attachment>
-
-    <attachment name="triggerAttachmentHabsburg_MonarchyDeactivatePikemenMoveBonus" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentHabsburg_MonarchyDiscoveredMarch"/>
-      <option name="when" value="after:Habsburg_MonarchyBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentOttoman_EmpireDeactivatePikemenMoveBonus" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentOttoman_EmpireDiscoveredMarch"/>
-      <option name="when" value="after:Ottoman_EmpireBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentItalian_StatesDeactivatePikemenMoveBonus" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentItalian_StatesDiscoveredMarch"/>
-      <option name="when" value="after:Italian_StatesBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentPoland-LithuaniaDeactivatePikemenMoveBonus" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentPoland-LithuaniaDiscoveredMarch"/>
-      <option name="when" value="after:Poland-LithuaniaBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentRussiaDeactivatePikemenMoveBonus" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentRussiaDiscoveredMarch"/>
-      <option name="when" value="after:RussiaBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentDenmarkDeactivatePikemenMoveBonus" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentDenmarkDiscoveredMarch"/>
-      <option name="when" value="after:DenmarkBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentSwedenDeactivatePikemenMoveBonus" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentSwedenDiscoveredMarch"/>
-      <option name="when" value="after:SwedenBattle"/>
-      <option name="unitType" value="Pikemen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Pikemen"/>
-    </attachment>
-
-<!--Musketmen-->
-    <attachment name="triggerAttachmentFranceDeactivateMusketmenMoveBonus" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentFranceDiscoveredMarch"/>
-      <option name="when" value="after:FranceBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentHabsburg_MonarchyDeactivateMusketmenMoveBonus" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentHabsburg_MonarchyDiscoveredMarch"/>
-      <option name="when" value="after:Habsburg_MonarchyBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentOttoman_EmpireDeactivateMusketmenMoveBonus" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentOttoman_EmpireDiscoveredMarch"/>
-      <option name="when" value="after:Ottoman_EmpireBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentItalian_StatesDeactivateMusketmenMoveBonus" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentItalian_StatesDiscoveredMarch"/>
-      <option name="when" value="after:Italian_StatesBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentPoland-LithuaniaDeactivateMusketmenMoveBonus" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentPoland-LithuaniaDiscoveredMarch"/>
-      <option name="when" value="after:Poland-LithuaniaBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentRussiaDeactivateMusketmenMoveBonus" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentRussiaDiscoveredMarch"/>
-      <option name="when" value="after:RussiaBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentDenmarkDeactivateMusketmenMoveBonus" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentDenmarkDiscoveredMarch"/>
-      <option name="when" value="after:DenmarkBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentSwedenDeactivateMusketmenMoveBonus" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentSwedenDiscoveredMarch"/>
-      <option name="when" value="after:SwedenBattle"/>
-      <option name="unitType" value="Musketmen"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Musketmen"/>
-    </attachment>
-
-<!--Cannon-->
-    <attachment name="triggerAttachmentFranceDeactivateCannonMoveBonus" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentFranceDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:FranceBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentHabsburg_MonarchyDeactivateCannonMoveBonus" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentHabsburg_MonarchyDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:Habsburg_MonarchyBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentOttoman_EmpireDeactivateCannonMoveBonus" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentOttoman_EmpireDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:Ottoman_EmpireBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentItalian_StatesDeactivateCannonMoveBonus" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentItalian_StatesDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:Italian_StatesBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentPoland-LithuaniaDeactivateCannonMoveBonus" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentPoland-LithuaniaDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:Poland-LithuaniaBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentRussiaDeactivateCannonMoveBonus" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentRussiaDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:RussiaBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentDenmarkDeactivateCannonMoveBonus" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentDenmarkDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:DenmarkBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentSwedenDeactivateCannonMoveBonus" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentSwedenDiscoveredHorsedrawnArtillery"/>
-      <option name="when" value="after:SwedenBattle"/>
-      <option name="unitType" value="Cannon"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Cannon"/>
-    </attachment>
-
-<!--Knights-->
-    <attachment name="triggerAttachmentFranceDeactivateKnightsMoveBonus" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentFranceDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:FranceBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentHabsburg_MonarchyDeactivateKnightsMoveBonus" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentHabsburg_MonarchyDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:Habsburg_MonarchyBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentOttoman_EmpireDeactivateKnightsMoveBonus" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentOttoman_EmpireDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:Ottoman_EmpireBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentItalian_StatesDeactivateKnightsMoveBonus" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentItalian_StatesDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:Italian_StatesBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentPoland-LithuaniaDeactivateKnightsMoveBonus" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentPoland-LithuaniaDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:Poland-LithuaniaBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentRussiaDeactivateKnightsMoveBonus" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentRussiaDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:RussiaBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentDenmarkDeactivateKnightsMoveBonus" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentDenmarkDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:DenmarkBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentSwedenDeactivateKnightsMoveBonus" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentSwedenDiscoveredIronHorseshoes"/>
-      <option name="when" value="after:SwedenBattle"/>
-      <option name="unitType" value="Knights"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Knights"/>
-    </attachment>
-
-<!--Navy-->
-    <attachment name="triggerAttachmentFranceDeactivateNavyMoveBonus" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentFranceDiscoveredSailing"/>
-      <option name="when" value="after:FranceBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentHabsburg_MonarchyDeactivateNavyMoveBonus" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentHabsburg_MonarchyDiscoveredSailing"/>
-      <option name="when" value="after:Habsburg_MonarchyBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentOttoman_EmpireDeactivateNavyMoveBonus" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentOttoman_EmpireDiscoveredSailing"/>
-      <option name="when" value="after:Ottoman_EmpireBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentItalian_StatesDeactivateNavyMoveBonus" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentItalian_StatesDiscoveredSailing"/>
-      <option name="when" value="after:Italian_StatesBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentPoland-LithuaniaDeactivateNavyMoveBonus" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentPoland-LithuaniaDiscoveredSailing"/>
-      <option name="when" value="after:Poland-LithuaniaBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentRussiaDeactivateNavyMoveBonus" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentRussiaDiscoveredSailing"/>
-      <option name="when" value="after:RussiaBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentDenmarkDeactivateNavyMoveBonus" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentDenmarkDiscoveredSailing"/>
-      <option name="when" value="after:DenmarkBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentSwedenDeactivateNavyMoveBonus" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentSwedenDiscoveredSailing"/>
-      <option name="when" value="after:SwedenBattle"/>
-      <option name="unitType" value="Navy"/>
-      <option name="unitProperty" value="givesMovement" count="-reset-0:Navy"/>
-    </attachment>
-
 <!--Triggers: Remove Recruits-->
-    <attachment name="triggerAttachmentFranceRemoveRecruits" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachmentRemoveRecruits" attachTo="France" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAlways"/>
+      <option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Italian_States:Poland-Lithuania:Russia:Denmark:Sweden"/>
+      <option name="removeUnits" value="all:RecruitPikemen"/>
       <option name="when" value="after:FranceEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentHabsburg_MonarchyRemoveRecruits" attachTo="Habsburg_Monarchy" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Habsburg_MonarchyEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentOttoman_EmpireRemoveRecruits" attachTo="Ottoman_Empire" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Ottoman_EmpireEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentItalian_StatesRemoveRecruits" attachTo="Italian_States" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Italian_StatesEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
 
-    <attachment name="triggerAttachmentRussiaRemoveRecruits" attachTo="Russia" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
-      <option name="when" value="after:RussiaEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentPoland-LithuaniaRemoveRecruits" attachTo="Poland-Lithuania" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
       <option name="when" value="after:Poland-LithuaniaEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
-
-    <attachment name="triggerAttachmentDenmarkRemoveRecruits" attachTo="Denmark" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
+      <option name="when" value="after:RussiaEndTurn"/>
       <option name="when" value="after:DenmarkEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
+      <option name="when" value="after:SwedeniEndTurn"/>
     </attachment>
 
-    <attachment name="triggerAttachmentSwedenRemoveRecruits" attachTo="Sweden" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAlways"/>
-      <option name="when" value="after:SwedenEndTurn"/>
-      <option name="removeUnits" value="all:RecruitPikemen"/>
-    </attachment>
 
     </attachmentList>
 
@@ -9127,74 +8714,22 @@
             <resourceGiven player="Italian_States" resource="PUs" quantity="40"/>
             <resourceGiven player="Poland-Lithuania" resource="PUs" quantity="60"/>
             <resourceGiven player="Sweden" resource="PUs" quantity="40"/>
-
-            <resourceGiven player="France" resource="techTokens" quantity="12"/>
-            <resourceGiven player="Ottoman_Empire" resource="techTokens" quantity="12"/>
-            <resourceGiven player="Russia" resource="techTokens" quantity="12"/>
-            <resourceGiven player="Denmark" resource="techTokens" quantity="12"/>
-
-            <resourceGiven player="Habsburg_Monarchy" resource="techTokens" quantity="12"/>
-            <resourceGiven player="Italian_States" resource="techTokens" quantity="12"/>
-            <resourceGiven player="Poland-Lithuania" resource="techTokens" quantity="12"/>
-            <resourceGiven player="Sweden" resource="techTokens" quantity="12"/>
         </resourceInitialize>
     </initialize>
 
     <propertyList>
 
-    <!-- victory options -->
-    <property name="Projection of Power" value="false" editable="false">
-      <boolean/>
-    </property>
-    <!-- format of "<alliance> <Name of Victory Condition>" -->
-    <property name="Axis Projection of Power VCs" value="11" editable="false">
-      <number min="10" max="15"/>
-    </property>
-    <property name="Allies Projection of Power VCs" value="11" editable="false">
-      <number min="10" max="15"/>
-    </property>
-    <property name="Honorable Surrender" value="false" editable="false">
-      <boolean/>
-    </property>
-    <property name="Axis Honorable Victory VCs" value="12" editable="false">
-      <number min="10" max="15"/>
-    </property>
-    <property name="Allies Honorable Victory VCs" value="12" editable="false">
-      <number min="10" max="15"/>
-    </property>
-    <property name="Total Victory" value="false" editable="false">
-      <boolean/>
-    </property>
-    <property name="Axis Total Victory VCs" value="15" editable="false">
-      <number min="10" max="15"/>
-    </property>
-    <property name="Allies Total Victory VCs" value="15" editable="false">
-      <number min="10" max="15"/>
-    </property>
-    <property name="Economic Victory" value="false" editable="false">
-      <boolean/>
-    </property>
-    <property name="Axis Economic Victory" value="120" editable="false">
-      <number min="0" max="1000"/>
-    </property>
-    <property name="Allies Economic Victory" value="120" editable="false">
-      <number min="0" max="1000"/>
-    </property>
-    <property name="Triggered Victory" value="false" editable="false">
-      <boolean/>
-    </property>
-
 <!--Low Luck-->
     <property name="Low Luck" value="true" editable="true">
       <boolean/>
     </property>
-    <property name="Low Luck for AntiAircraft" value="true" editable="true">
+    <property name="Low Luck for AntiAircraft" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Low Luck for Technology" value="true" editable="true">
       <boolean/>
     </property>
-    <property name="Low Luck for Bombing and Territory Damage" value="false" editable="true">
+    <property name="Low Luck for Bombing and Territory Damage" value="false" editable="false">
       <boolean/>
     </property>
     <property name="Use Politics" value="false" editable="false">
@@ -9361,14 +8896,14 @@
     <property name="Units Can Be Changed On Capture" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="More Constructions with Factory" value="false" editable="true">
+    <property name="More Constructions with Factory" value="false" editable="false">
       <boolean/>
     </property>
 
-    <property name="More Constructions without Factory" value="false" editable="true">
+    <property name="More Constructions without Factory" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="Unlimited Constructions" value="false" editable="true">
+    <property name="Unlimited Constructions" value="false" editable="false">
       <boolean/>
     </property>
     <property name="Blitz Through Factories And AA Restricted" value="true" editable="false">
@@ -9395,7 +8930,7 @@
     <property name="Multiple AA Per Territory" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Suicide and Munition Casualties Restricted" value="false" editable="true">
+    <property name="Suicide and Munition Casualties Restricted" value="false" editable="false">
       <boolean/>
     </property>
     <property name="Defending Suicide and Munition Units Do Not Fire" value="false" editable="false">
@@ -9590,9 +9125,17 @@
         <property name="notes">
             <value>
             <![CDATA[
-A hypothetical series of wars in 1547. In this scenario, The Habsburg Monarchy manages to bring all of its holdings into a strongly unified single nation. 
-The powerful nations of France, Russia, and the Ottoman Empire unite to stop this growing threat, and the other nations of Europe all take sides.
+A hypothetical series of wars in 16th Century Europe. In this scenario, The Habsburg Monarchy manages to bring all of its holdings into a strongly unified single nation. 
+The powerful nations of France, Russia, and the Ottoman Empire unite to stop this growing threat, and the other nations of Europe take sides.
 The game isn't historically accurate, its just an attempt to capture various conflicts from Europe in this era and bring them into a single scenario. It also aims to include often unseen but powerful nations, such as Denmark, Sweden, Poland, and Venice.
+<br/>
+<br/>
+Credits:
+<br/>Primary map design and XML by Crazy G.
+<br/>Unit art by Frostion.
+<br/>Unit and map art by Hepps.
+<br/>Special thanks to WC_Sumpton for assitance creating XML
+<br/>Thanks to the design team and everyone who has provided feedback so far.
 <br/>
 <br/>
 <table border="2"bgcolor="ABABAB">
