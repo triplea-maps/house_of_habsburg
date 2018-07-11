@@ -7237,7 +7237,7 @@
 	<option name="players" value="France:Habsburg_Monarchy:Ottoman_Empire:Poland-Lithuania:Russia:Denmark:Sweden"/>
       <option name="unitType" value="Pikemen:Musketmen:Cannon:Knights:Navy"/>
       <option name="unitProperty" value="givesMovement" count="-reset-"/>
-<!--      <option name="when" value="before:FranceCombatMove"/>-->
+      <option name="when" value="before:FranceCombatMove"/>
       <option name="when" value="before:Habsburg_MonarchyCombatMove"/>
       <option name="when" value="before:Ottoman_EmpireCombatMove"/>
       <option name="when" value="before:Italian_StatesCombatMove"/>
@@ -7274,7 +7274,7 @@
             <territoryOwner territory="Ionian Islands" owner="Italian_States"/>
             <territoryOwner territory="Evia" owner="Ottoman_Empire"/>
             <territoryOwner territory="Greece 10" owner="Ottoman_Empire"/>
-            <territoryOwner territory="Cyclades" owner="Ottoman_Empire"/>
+            <territoryOwner territory="Cyclades" owner="Italian_States"/>
             <territoryOwner territory="Greece 11" owner="Ottoman_Empire"/>
             <territoryOwner territory="East Crimea" owner="Ottoman_Empire"/>
             <territoryOwner territory="Aland Islands" owner="Sweden"/>
@@ -7995,14 +7995,14 @@
             <unitPlacement unitType="Cannon" territory="England 06" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="England 06" quantity="1"/>
             <unitPlacement unitType="Village" territory="England 06" quantity="2"/>
-            <unitPlacement unitType="Pikemen" territory="England 07" quantity="1"/>
+            <unitPlacement unitType="Musketmen" territory="England 07" quantity="1"/>
             <unitPlacement unitType="Village" territory="England 07" quantity="1"/>
             <unitPlacement unitType="Castle" territory="England 08" quantity="1"/>
             <unitPlacement unitType="City" territory="England 08" quantity="1"/>
             <unitPlacement unitType="Musketmen" territory="England 08" quantity="3"/>
             <unitPlacement unitType="Pikemen" territory="England 08" quantity="3"/>
             <unitPlacement unitType="Pikemen" territory="England 09" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="England 10" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="England 10" quantity="2"/>
             <unitPlacement unitType="Village" territory="England 10" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="England 11" quantity="1"/>
             <unitPlacement unitType="Musketmen" territory="England 12" quantity="1"/>
@@ -8048,8 +8048,7 @@
             <unitPlacement unitType="City" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="France 23" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 23" quantity="2" owner="France"/>
-            <unitPlacement unitType="Musketmen" territory="France 23B" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="France 23B" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="France 23B" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="France 27" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 27" quantity="2" owner="France"/>
             <unitPlacement unitType="Village" territory="France 27" quantity="2" owner="France"/>
@@ -8530,6 +8529,8 @@
             <unitPlacement unitType="Village" territory="Sicily 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Sicily 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Sinai 02" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Sinai 03" quantity="1"/>
+            <unitPlacement unitType="Pikemen" territory="Sinai 05" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Slovakia 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Slovakia 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Slovakia 03" quantity="1" owner="Habsburg_Monarchy"/>
