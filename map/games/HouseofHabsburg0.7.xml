@@ -1004,6 +1004,7 @@
 
         <connection t1="Sea Zone 136" t2="Malta"/>
 
+        <connection t1="Albania 01" t2="Sea Zone 150"/>
 
 
         <connection t1="Sea Zone 176" t2="Russia 01"/>
@@ -1517,7 +1518,6 @@
         <connection t1="Sea Zone 81" t2="Sea Zone 82"/>
         <connection t1="Sea Zone 81" t2="Sea Zone 83"/>
         <connection t1="Sea Zone 81" t2="Sea Zone 84"/>
-        <connection t1="Sea Zone 82" t2="Sea Zone 83"/>
         <connection t1="Sea Zone 83" t2="Sea Zone 84"/>
         <connection t1="Sea Zone 84" t2="Sea Zone 85"/>
         <connection t1="Sea Zone 84" t2="Sea Zone 86"/>
@@ -1648,7 +1648,6 @@
                 <connection t1="Sea Zone 185" t2="Turkey 06"/>
                 <connection t1="Sea Zone 185" t2="Turkey 07"/>
                 <connection t1="Sea Zone 185" t2="Turkey 08"/>
-                <connection t1="Sea Zone 186" t2="Greece 02"/>
                 <connection t1="Sea Zone 186" t2="Greece 03"/>
                 <connection t1="Sea Zone 186" t2="Greece 05"/>
                 <connection t1="Sea Zone 188" t2="Greece 01"/>
@@ -1792,7 +1791,6 @@
                 <connection t1="Sea Zone 95" t2="Morocco 07"/>
                 <connection t1="Sea Zone 97" t2="Spain 33"/>
                 <connection t1="Sea Zone 97" t2="Spain 35"/>
-                <connection t1="Sea Zone 98" t2="Spain 35"/>
                 <connection t1="Sea Zone 99" t2="Algeria 01"/>
                 <connection t1="Sea Zone 99" t2="Algeria 02"/>
                 <connection t1="Sea Zone 99" t2="Morocco 08"/>
@@ -2934,6 +2932,7 @@
         <connection t1="Russia 02" t2="Russia 03"/>
         <connection t1="Russia 02" t2="Russia 14"/>
         <connection t1="Russia 02" t2="Russia 16"/>
+        <connection t1="Russia 02" t2="Russia 17"/>
         <connection t1="Russia 03" t2="Russia 04"/>
         <connection t1="Russia 03" t2="Russia 13"/>
         <connection t1="Russia 03" t2="Russia 14"/>
@@ -3419,17 +3418,19 @@
         <connection t1="Turkey 31" t2="Turkey 41"/>
         <connection t1="Turkey 31" t2="Turkey 42"/>
         <connection t1="Turkey 32" t2="Turkey 41"/>
+        <connection t1="Turkey 32" t2="Turkey 35"/>
         <connection t1="Turkey 34" t2="Turkey 35"/>
         <connection t1="Turkey 35" t2="Turkey 36"/>
-        <connection t1="Turkey 35" t2="Turkey 39"/>
         <connection t1="Turkey 35" t2="Turkey 40"/>
         <connection t1="Turkey 35" t2="Turkey 41"/>
         <connection t1="Turkey 36" t2="Turkey 37"/>
         <connection t1="Turkey 36" t2="Turkey 38"/>
         <connection t1="Turkey 36" t2="Turkey 39"/>
+        <connection t1="Turkey 36" t2="Turkey 40"/>
         <connection t1="Turkey 37" t2="Turkey 38"/>
         <connection t1="Turkey 38" t2="Turkey 39"/>
         <connection t1="Turkey 38" t2="Turkey 54"/>
+        <connection t1="Turkey 38" t2="Syria 03"/>
         <connection t1="Turkey 39" t2="Turkey 40"/>
         <connection t1="Turkey 39" t2="Turkey 54"/>
         <connection t1="Turkey 40" t2="Turkey 41"/>
@@ -3457,6 +3458,27 @@
         <connection t1="Turkey 51" t2="Turkey 52"/>
         <connection t1="Turkey 52" t2="Turkey 53"/>
         <connection t1="Turkey 53" t2="Turkey 54"/>
+        <connection t1="Turkey 55" t2="Turkey 39"/>
+        <connection t1="Turkey 55" t2="Turkey 50"/>
+        <connection t1="Turkey 55" t2="Turkey 52"/>
+        <connection t1="Turkey 55" t2="Turkey 53"/>
+        <connection t1="Turkey 55" t2="Turkey 54"/>
+        <connection t1="Turkey 55" t2="Turkey 56"/>
+        <connection t1="Turkey 56" t2="Turkey 50"/>
+        <connection t1="Turkey 56" t2="Turkey 40"/>
+        <connection t1="Turkey 56" t2="Turkey 39"/>
+        <connection t1="Turkey 57" t2="Turkey 35"/>
+        <connection t1="Turkey 57" t2="Turkey 27"/>
+        <connection t1="Turkey 57" t2="Turkey 26"/>
+        <connection t1="Turkey 57" t2="Turkey 37"/>
+        <connection t1="Turkey 57" t2="Turkey 36"/>
+        <connection t1="Turkey 58" t2="Turkey 22"/>
+        <connection t1="Turkey 58" t2="Turkey 23"/>
+        <connection t1="Turkey 58" t2="Turkey 16"/>
+        <connection t1="Turkey 58" t2="Turkey 26"/>
+        <connection t1="Turkey 58" t2="Turkey 15"/>
+        <connection t1="Turkey 58" t2="Turkey 24"/>
+        <connection t1="Turkey 58" t2="Turkey 25"/>
         <connection t1="Ukraine 01" t2="Ukraine 02"/>
         <connection t1="Ukraine 01" t2="Ukraine 04"/>
         <connection t1="Ukraine 01" t2="Ukraine 05"/>
