@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-    <info name="House of Habsburg 0.7" version="0.7"/>
+    <info name="House of Habsburg 0.8" version="0.8"/>
     <loader javaClass="games.strategy.triplea.TripleA"/>
 	<diceSides value="12"/>
 
@@ -2303,7 +2303,7 @@
         <connection t1="France 07" t2="France 18"/>
         <connection t1="France 08" t2="France 09"/>
         <connection t1="France 08" t2="Paris"/>
-        <connection t1="France 08" t2="France 18"/>
+        <connection t1="France 08" t2="France 15"/>
         <connection t1="France 09" t2="France 10"/>
         <connection t1="France 09" t2="France 14"/>
         <connection t1="France 09" t2="Paris"/>
@@ -7848,6 +7848,38 @@
 
         <unitInitialize>
 
+            <unitPlacement unitType="Pikemen" territory="France 15" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 23B" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="France 23B" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Ionian Islands" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Pikemen" territory="Gotland" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Saaremaa" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Malta" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="City" territory="Rhodes" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Pikemen" territory="Rhodes" quantity="2" owner="Italian_States"/>
+            <unitPlacement unitType="Village" territory="Cyprus" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Pikemen" territory="Cyprus" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 107" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 113" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 114" quantity="1" owner="France"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 126" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 130" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 136" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 150" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 152" quantity="2" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 159" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 172" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 182" quantity="1" owner="Italian_States"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 186" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 190" quantity="2" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 191" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 26" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 27" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 34" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 36" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 37" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 39" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Navy" territory="Sea Zone 82" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="Algeria 03" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Algeria 03" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Algeria 04" quantity="1"/>
@@ -7884,10 +7916,9 @@
             <unitPlacement unitType="Village" territory="Belgium 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Belgium 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Belgium 04" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Castle" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Castle" territory="Belgium 05" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Belgium 06" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Belgium 06" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Belorussia 02" quantity="1" owner="Poland-Lithuania"/>
@@ -7984,12 +8015,9 @@
             <unitPlacement unitType="Musketmen" territory="Croatia 07" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Croatia 07" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Croatia 08" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Village" territory="Cyprus" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Pikemen" territory="Cyprus" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Castle" territory="Denmark 01" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="City" territory="Denmark 01" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Musketmen" territory="Denmark 01" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Pikemen" territory="Denmark 01" quantity="2" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Denmark 02" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Denmark 02" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Denmark 03" quantity="1" owner="Denmark"/>
@@ -8039,25 +8067,34 @@
             <unitPlacement unitType="Village" territory="Finland 05" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="City" territory="France 02" quantity="1" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 02" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 02" quantity="3" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 04" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 02" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 02" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 04" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 04" quantity="1" owner="France"/>
             <unitPlacement unitType="Castle" territory="France 06" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 06" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 06" quantity="1" owner="France"/>
-            <unitPlacement unitType="Musketmen" territory="France 08" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 08" quantity="2" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 08" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 09" quantity="1" owner="France"/>
-            <unitPlacement unitType="Knights" territory="France 15" quantity="2" owner="France"/>
-            <unitPlacement unitType="Musketmen" territory="France 15" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 15" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 15" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 06" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 07" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 07" quantity="2" owner="France"/>
+            <unitPlacement unitType="HalfCastle" territory="France 07" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 11" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 13" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 13" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 14" quantity="3" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 14" quantity="1" owner="France"/>
+            <unitPlacement unitType="City" territory="Paris" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="Paris" quantity="3" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="Paris" quantity="3" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="Paris" quantity="1" owner="France"/>
+            <unitPlacement unitType="Cannon" territory="Paris" quantity="1" owner="France"/>
             <unitPlacement unitType="Cannon" territory="France 16" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 16" quantity="2" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 17" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 16" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 17" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 17" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 17" quantity="2" owner="France"/>
             <unitPlacement unitType="Village" territory="France 18" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 18" quantity="2" owner="France"/>
+            <unitPlacement unitType="Cannon" territory="France 18" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 19" quantity="1"/>
             <unitPlacement unitType="Musketmen" territory="France 20" quantity="1"/>
             <unitPlacement unitType="Village" territory="France 20" quantity="2"/>
@@ -8069,30 +8106,32 @@
             <unitPlacement unitType="Pikemen" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="France 22" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="France 23" quantity="1" owner="France"/>
+            <unitPlacement unitType="Knights" territory="France 23" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 23" quantity="2" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 23B" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="France 24" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 25" quantity="1" owner="France"/>
+            <unitPlacement unitType="Cannon" territory="France 25" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 25" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 27" quantity="3" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 27" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 27" quantity="2" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 27" quantity="2" owner="France"/>
-            <unitPlacement unitType="Musketmen" territory="France 29" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 29" quantity="1" owner="France"/>
+            <unitPlacement unitType="Cannon" territory="France 28" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 28" quantity="2" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 30" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="France 30" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="France 35" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 30" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="France 33" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 33" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 35" quantity="2" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 36" quantity="1" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 36" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 37" quantity="1" owner="France"/>
             <unitPlacement unitType="City" territory="France 38" quantity="1" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="France 38" quantity="1" owner="France"/>
-            <unitPlacement unitType="Knights" territory="France 38" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 38" quantity="1" owner="France"/>
+            <unitPlacement unitType="Pikemen" territory="France 40" quantity="1" owner="France"/>
             <unitPlacement unitType="Village" territory="France 40" quantity="3" owner="France"/>
-            <unitPlacement unitType="Musketmen" territory="France 40" quantity="1" owner="France"/>
-            <unitPlacement unitType="Cannon" territory="France 42" quantity="1" owner="France"/>
             <unitPlacement unitType="City" territory="France 42" quantity="1" owner="France"/>
             <unitPlacement unitType="HalfCastle" territory="France 42" quantity="1" owner="France"/>
-            <unitPlacement unitType="Pikemen" territory="France 42" quantity="3" owner="France"/>
-            <unitPlacement unitType="Village" territory="France 44" quantity="1" owner="France"/>
+            <unitPlacement unitType="Musketmen" territory="France 42" quantity="1" owner="France"/>
+            <unitPlacement unitType="Village" territory="France 44" quantity="2" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 45" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="France 46" quantity="1" owner="France"/>
             <unitPlacement unitType="Musketmen" territory="Germany 01" quantity="1"/>
@@ -8158,9 +8197,8 @@
             <unitPlacement unitType="Knights" territory="Germany 36" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Germany 36" quantity="1"/>
             <unitPlacement unitType="Village" territory="Germany 36" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Gotland" quantity="1" owner="Denmark"/>
+            <unitPlacement unitType="Pikemen" territory="Gibraltar" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Greece 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Greece 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Castle" territory="Greece 03" quantity="1" owner="Ottoman_Empire"/>
@@ -8168,10 +8206,11 @@
             <unitPlacement unitType="Musketmen" territory="Greece 03" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Greece 03" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Greece 06" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Hungary 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 02" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Knights" territory="Hungary 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Hungary 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Hungary 04" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Hungary 05" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Hungary 05" quantity="3" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Hungary 05" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Cannon" territory="Hungary 06" quantity="1" owner="Ottoman_Empire"/>
@@ -8195,10 +8234,9 @@
             <unitPlacement unitType="City" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Knights" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Hungary 11" quantity="3" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Hungary 11" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Hungary 12" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Hungary 12" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Ionian Islands" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Ireland 01" quantity="2"/>
             <unitPlacement unitType="Village" territory="Ireland 01" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Ireland 02" quantity="1"/>
@@ -8235,14 +8273,14 @@
             <unitPlacement unitType="Village" territory="Italy 14" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 15" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Italy 16" quantity="1"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 17" quantity="1"/>
             <unitPlacement unitType="Village" territory="Italy 16" quantity="2"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 17" quantity="1"/>
             <unitPlacement unitType="Castle" territory="Italy 18" quantity="1"/>
             <unitPlacement unitType="City" territory="Italy 18" quantity="1"/>
             <unitPlacement unitType="Musketmen" territory="Italy 18" quantity="5"/>
             <unitPlacement unitType="City" territory="Italy 19" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Italy 19" quantity="2" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Italy 19" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Musketmen" territory="Italy 19" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Italy 19" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Italy 24" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Italy 24" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Italy 26" quantity="1" owner="Habsburg_Monarchy"/>
@@ -8276,7 +8314,6 @@
             <unitPlacement unitType="Musketmen" territory="Macedonia" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Cannon" territory="Macedonia" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="City" territory="Macedonia" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Malta" quantity="1" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Moldova 01" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Moldova 02" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Moldova 03" quantity="1" owner="Ottoman_Empire"/>
@@ -8294,9 +8331,10 @@
             <unitPlacement unitType="Pikemen" territory="Morocco 08" quantity="1"/>
             <unitPlacement unitType="Pikemen" territory="Netherlands 01" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Netherlands 02" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Netherlands 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Netherlands 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Knights" territory="Netherlands 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Netherlands 03" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Netherlands 03" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Netherlands 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Netherlands 04" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Norway 08" quantity="1" owner="Denmark"/>
@@ -8308,15 +8346,10 @@
             <unitPlacement unitType="Pikemen" territory="Norway 10" quantity="2" owner="Denmark"/>
             <unitPlacement unitType="Musketmen" territory="Norway 10" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Norway 11" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Village" territory="Norway 12" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Knights" territory="Norway 13" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Musketmen" territory="Norway 13" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Norway 13" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Norway 13" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Musketmen" territory="Paris" quantity="3" owner="France"/>
-            <unitPlacement unitType="Cannon" territory="Paris" quantity="1" owner="France"/>
-            <unitPlacement unitType="Castle" territory="Paris" quantity="1" owner="France"/>
-            <unitPlacement unitType="City" territory="Paris" quantity="1" owner="France"/>
             <unitPlacement unitType="Pikemen" territory="Poland 01" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Poland 02" quantity="1"/>
             <unitPlacement unitType="Village" territory="Poland 02" quantity="1"/>
@@ -8351,8 +8384,6 @@
             <unitPlacement unitType="Castle" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="City" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
             <unitPlacement unitType="Pikemen" territory="Prussia 02" quantity="1" owner="Poland-Lithuania"/>
-            <unitPlacement unitType="City" territory="Rhodes" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Pikemen" territory="Rhodes" quantity="2" owner="Italian_States"/>
             <unitPlacement unitType="Pikemen" territory="Romania 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Romania 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 02" quantity="2" owner="Ottoman_Empire"/>
@@ -8363,25 +8394,29 @@
             <unitPlacement unitType="Village" territory="Romania 04" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Romania 05" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Romania 06" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Romania 08" quantity="1"  owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 08" quantity="1"  owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Romania 08" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 08" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Castle" territory="Romania 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="City" territory="Romania 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Knights" territory="Romania 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Musketmen" territory="Romania 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 09" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 10" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Knights" territory="Romania 11" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 11" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 12" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Cannon" territory="Romania 13" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Musketmen" territory="Romania 13" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 14" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Knights" territory="Romania 15" quantity="1"  owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 15" quantity="1"  owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Romania 15" quantity="2"  owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 16" quantity="1"  owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Knights" territory="Romania 15" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 15" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Romania 15" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 16" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Castle" territory="Romania 17" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 17" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Romania 17" quantity="3" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Musketmen" territory="Romania 17" quantity="1" owner="Ottoman_Empire"/>
+            <unitPlacement unitType="Cannon" territory="Romania 17" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Musketmen" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Romania 18" quantity="1" owner="Ottoman_Empire"/>
@@ -8390,9 +8425,9 @@
             <unitPlacement unitType="Musketmen" territory="Romania 19" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Romania 20" quantity="2" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Romania 21" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Cannon" territory="Romania 22" quantity="1"  owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Romania 22" quantity="1"  owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Romania 22" quantity="2"  owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Romania 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Romania 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Romania 22" quantity="2" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Cannon" territory="Russia 02" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Castle" territory="Russia 02" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="City" territory="Russia 02" quantity="1" owner="Sweden"/>
@@ -8492,7 +8527,6 @@
             <unitPlacement unitType="Musketmen" territory="Russia 74" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Russia 74" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Russia 74" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Pikemen" territory="Saaremaa" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Sardinia 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Sardinia 02" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 01" quantity="1"/>
@@ -8509,27 +8543,6 @@
             <unitPlacement unitType="Pikemen" territory="Scotland 07" quantity="1"/>
             <unitPlacement unitType="Village" territory="Scotland 07" quantity="2"/>
             <unitPlacement unitType="Pikemen" territory="Scotland 09" quantity="1"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 107" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 113" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 114" quantity="1" owner="France"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 126" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 130" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 136" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 150" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 152" quantity="2" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 159" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 172" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 182" quantity="1" owner="Italian_States"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 186" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 190" quantity="2" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 191" quantity="1" owner="Ottoman_Empire"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 26" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 27" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 34" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 36" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 37" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 39" quantity="1" owner="Sweden"/>
-            <unitPlacement unitType="Navy" territory="Sea Zone 82" quantity="1" owner="France"/>
             <unitPlacement unitType="Cannon" territory="Serbia 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Pikemen" territory="Serbia 01" quantity="1" owner="Ottoman_Empire"/>
             <unitPlacement unitType="Village" territory="Serbia 01" quantity="1" owner="Ottoman_Empire"/>
@@ -8558,35 +8571,35 @@
             <unitPlacement unitType="Pikemen" territory="Slovakia 03" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Slovenia" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 03" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 03" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 03" quantity="3" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 06" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Spain 07" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Spain 08" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Spain 08" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 12" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Spain 13" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 15" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Spain 16" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 14" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 17" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Spain 17" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="HalfCastle" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Musketmen" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Spain 18" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Cannon" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 19" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 21" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Knights" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Cannon" territory="Spain 22" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 22" quantity="2" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 23" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 27" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Spain 27" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 30" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Spain 30" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Musketmen" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Pikemen" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="City" territory="Spain 33" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Knights" territory="Spain 37" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Pikemen" territory="Spain 37" quantity="1" owner="Habsburg_Monarchy"/>
-            <unitPlacement unitType="Village" territory="Spain 37" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Village" territory="Spain 36" quantity="1" owner="Habsburg_Monarchy"/>
+            <unitPlacement unitType="Pikemen" territory="Spain 36" quantity="1" owner="Habsburg_Monarchy"/>
             <unitPlacement unitType="Village" territory="Sweden 05" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 05" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 06" quantity="2" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 06" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 07" quantity="1" owner="Sweden"/>
@@ -8595,18 +8608,20 @@
             <unitPlacement unitType="City" territory="Sweden 09" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Knights" territory="Sweden 09" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 09" quantity="2" owner="Sweden"/>
-            <unitPlacement unitType="Pikemen" territory="Sweden 10" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Pikemen" territory="Sweden 10" quantity="3" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 10" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Cannon" territory="Sweden 10" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Cannon" territory="Sweden 11" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 11" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 11" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 12" quantity="3" owner="Denmark"/>
-            <unitPlacement unitType="Village" territory="Sweden 12" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 12" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 13" quantity="3" owner="Denmark"/>
-            <unitPlacement unitType="Village" territory="Sweden 13" quantity="2" owner="Denmark"/>
+            <unitPlacement unitType="Village" territory="Sweden 13" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Knights" territory="Sweden 14" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Musketmen" territory="Sweden 14" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 14" quantity="1" owner="Sweden"/>
+            <unitPlacement unitType="Village" territory="Sweden 14" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Castle" territory="Sweden 15" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Village" territory="Sweden 15" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 15" quantity="1" owner="Sweden"/>
@@ -8623,7 +8638,6 @@
             <unitPlacement unitType="Village" territory="Sweden 19" quantity="1" owner="Sweden"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 20" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Sweden 20" quantity="1" owner="Denmark"/>
-            <unitPlacement unitType="Castle" territory="Sweden 21" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Knights" territory="Sweden 21" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Pikemen" territory="Sweden 21" quantity="1" owner="Denmark"/>
             <unitPlacement unitType="Village" territory="Sweden 21" quantity="1" owner="Denmark"/>
