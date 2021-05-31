@@ -1,0 +1,3 @@
+map_name: house_of_habsburg
+games:
+- {game_name: House of Habsburg 0.8, file_name: HouseofHabsburg0.8.xml}
